@@ -15,185 +15,184 @@ const featuredProjects = (await getCollection("projects"))
   title="Yu Liu — Interaction Designer & HCI/XR Researcher"
   description={site.description}
 >
-<Header />
+  <Header />
 
-    <main>
-      <!-- HERO -->
-      <section class="hero" id="hero">
-        <div class="hero-inner">
-          <div class="hero-top">
-            <p class="eyebrow hero-reveal hero-reveal-1">{site.role}</p>
-          </div>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-top">
+          <p class="eyebrow hero-reveal hero-reveal-1">{site.role}</p>
+        </div>
 
-          <h1 class="display hero-title hero-reveal hero-reveal-2">
-            DESIGNING<br />
-            INTERACTIONS<br />
-            BETWEEN PEOPLE,<br />
-            SPACE & DIGITAL WORLDS.
-          </h1>
+        <h1 class="display hero-title hero-reveal hero-reveal-2">
+          DESIGNING<br />
+          INTERACTIONS<br />
+          BETWEEN PEOPLE,<br />
+          SPACE & DIGITAL WORLDS.
+        </h1>
 
-          <div class="hero-bottom hero-reveal hero-reveal-3">
-            <p class="lead">
-              {site.statement}
-            </p>
+        <div class="hero-bottom hero-reveal hero-reveal-3">
+          <p class="lead">
+            {site.statement}
+          </p>
 
-            <a class="scroll-link" href="#work"> Selected work ↓ </a>
+          <a class="scroll-link" href="#work"> Selected work ↓ </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section work scroll-reveal" id="work" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Selected Work</p>
+          <p class="section-index">
+            01 — {String(featuredProjects.length).padStart(2, "0")}
+          </p>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="project-list">
+          {
+            featuredProjects.map((project, index) => (
+              <a class="project-row" href={`/projects/${project.id}/`}>
+                <span class="project-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <div class="project-title-wrap">
+                  <h2 class="project-title">{project.data.title}</h2>
+
+                  <p class="project-subtitle">
+                    {project.data.category.join(" · ")}
+                  </p>
+                </div>
+
+                <span class="project-arrow">↗</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about scroll-reveal" id="about" data-reveal>
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About</p>
+        </div>
+
+        <div>
+          <p class="about-statement">
+            I work across interaction design, immersive technology, prototyping,
+            and human-computer interaction research.
+          </p>
+
+          <p class="about-copy">
+            My background spans industrial design, interaction design, product
+            development, and XR research. I am interested in how digital
+            experiences can become more spatial, intuitive, and meaningful in
+            real-world environments.
+          </p>
+
+          <a class="link-arrow about-link" href="/about/"> More about me </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="section research scroll-reveal" id="research" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Research</p>
+          <a
+            class="link-arrow research-link"
+            href="https://ardesignpattern.github.io/ar-interaction-patterns/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View research
+          </a>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="research-grid">
+          <p class="research-lead">
+            Research-driven design for immersive interaction, cultural heritage,
+            and extended reality.
+          </p>
+
+          <div class="research-meta">
+            <p>HCI</p>
+            <p>XR / AR</p>
+            <p>Interaction Design</p>
+            <p>Design Research</p>
+            <p>User Studies</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <!-- WORK -->
-      <section class="section work scroll-reveal" id="work" data-reveal>
-        <div class="container">
-          <div class="section-header">
-            <p class="eyebrow">Selected Work</p>
-            <p class="section-index">
-              01 — {String(featuredProjects.length).padStart(2, "0")}
-            </p>
-          </div>
+  <Footer />
 
-          <div class="rule"></div>
+  <script>
+    const header = document.querySelector<HTMLElement>("#site-header");
 
-          <div class="project-list">
-            {
-              featuredProjects.map((project, index) => (
-                <a class="project-row" href={`/projects/${project.id}/`}>
-                  <span class="project-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+    const updateHeader = () => {
+      if (!header) return;
 
-                  <div class="project-title-wrap">
-                    <h2 class="project-title">{project.data.title}</h2>
-
-                    <p class="project-subtitle">
-                      {project.data.category.join(" · ")}
-                    </p>
-                  </div>
-
-                  <span class="project-arrow">↗</span>
-                </a>
-              ))
-            }
-          </div>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-      <section class="section about scroll-reveal" id="about" data-reveal>
-        <div class="container about-grid">
-          <div>
-            <p class="eyebrow">About</p>
-          </div>
-
-          <div>
-            <p class="about-statement">
-              I work across interaction design, immersive technology,
-              prototyping, and human-computer interaction research.
-            </p>
-
-            <p class="about-copy">
-              My background spans industrial design, interaction design, product
-              development, and XR research. I am interested in how digital
-              experiences can become more spatial, intuitive, and meaningful in
-              real-world environments.
-            </p>
-
-            <a class="link-arrow about-link" href="/about/"> More about me </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- RESEARCH -->
-      <section class="section research scroll-reveal" id="research" data-reveal>
-        <div class="container">
-          <div class="section-header">
-            <p class="eyebrow">Research</p>
-            <a
-              class="link-arrow research-link"
-              href="https://ardesignpattern.github.io/ar-interaction-patterns/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View research
-            </a>
-          </div>
-
-          <div class="rule"></div>
-
-          <div class="research-grid">
-            <p class="research-lead">
-              Research-driven design for immersive interaction, cultural
-              heritage, and extended reality.
-            </p>
-
-            <div class="research-meta">
-              <p>HCI</p>
-              <p>XR / AR</p>
-              <p>Interaction Design</p>
-              <p>Design Research</p>
-              <p>User Studies</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <Footer />
-
-    <script>
-      const header = document.querySelector<HTMLElement>("#site-header");
-
-      const updateHeader = () => {
-        if (!header) return;
-
-        if (window.scrollY > 40) {
-          header.classList.add("is-scrolled");
-        } else {
-          header.classList.remove("is-scrolled");
-        }
-      };
-
-      updateHeader();
-
-      window.addEventListener("scroll", updateHeader, {
-        passive: true,
-      });
-
-      const revealItems =
-        document.querySelectorAll<HTMLElement>("[data-reveal]");
-
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.15,
-        },
-      );
-
-      revealItems.forEach((item) => {
-        revealObserver.observe(item);
-      });
-
-      const hero = document.querySelector<HTMLElement>("#hero");
-
-      if (hero) {
-        hero.addEventListener("pointermove", (event: PointerEvent) => {
-          const rect = hero.getBoundingClientRect();
-
-          const x = event.clientX - rect.left;
-          const y = event.clientY - rect.top;
-
-          hero.style.setProperty("--mouse-x", `${x}px`);
-          hero.style.setProperty("--mouse-y", `${y}px`);
-        });
+      if (window.scrollY > 40) {
+        header.classList.add("is-scrolled");
+      } else {
+        header.classList.remove("is-scrolled");
       }
-    </script>
+    };
+
+    updateHeader();
+
+    window.addEventListener("scroll", updateHeader, {
+      passive: true,
+    });
+
+    const revealItems = document.querySelectorAll<HTMLElement>("[data-reveal]");
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      },
+    );
+
+    revealItems.forEach((item) => {
+      revealObserver.observe(item);
+    });
+
+    const hero = document.querySelector<HTMLElement>("#hero");
+
+    if (hero) {
+      hero.addEventListener("pointermove", (event: PointerEvent) => {
+        const rect = hero.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        hero.style.setProperty("--mouse-x", `${x}px`);
+        hero.style.setProperty("--mouse-y", `${y}px`);
+      });
+    }
+  </script>
 </BaseLayout>
 
 <style>
