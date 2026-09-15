@@ -1,0 +1,122 @@
+---
+import { site } from "../data/site";
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer" id="contact">
+  <div class="container footer-inner">
+    <div class="footer-top">
+      <p class="eyebrow">Contact</p>
+
+      <a class="footer-email" href={`mailto:${site.email}`}>
+        {site.email}
+      </a>
+    </div>
+
+    <div class="rule"></div>
+
+    <div class="footer-bottom">
+      <div>
+        <p class="footer-name">{site.name}</p>
+        <p class="footer-role">{site.role}</p>
+      </div>
+
+      <div class="footer-links">
+        <a href={site.social.github} target="_blank" rel="noreferrer">
+          GitHub ↗
+        </a>
+
+        {
+          site.social.linkedin && (
+            <a href={site.social.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn ↗
+            </a>
+          )
+        }
+      </div>
+
+      <p class="footer-year">© {year}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    padding-block: clamp(5rem, 9vw, 9rem) 2rem;
+  }
+
+  .footer-inner {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .footer-top {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .footer-email {
+    width: fit-content;
+    font-size: clamp(2.2rem, 6vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+    transition: opacity var(--transition-fast);
+  }
+
+  .footer-email:hover {
+    opacity: 0.65;
+  }
+
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr auto;
+    gap: 2rem;
+    align-items: end;
+  }
+
+  .footer-name,
+  .footer-role,
+  .footer-year {
+    margin: 0;
+  }
+
+  .footer-name {
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .footer-role,
+  .footer-year {
+    margin-top: 0.3rem;
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    font-size: var(--text-sm);
+  }
+
+  .footer-links a {
+    color: var(--muted);
+    transition: color var(--transition-fast);
+  }
+
+  .footer-links a:hover {
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    .footer-bottom {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    .footer-year {
+      margin-top: 1rem;
+    }
+  }
+</style>

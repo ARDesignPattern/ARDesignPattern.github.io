@@ -1,0 +1,107 @@
+---
+import { site } from "../data/site";
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/" aria-label="Yu Liu home">
+      {site.name}
+    </a>
+
+    <nav class="nav" aria-label="Primary navigation">
+      {
+        site.navigation.map((item) => (
+          <a class="nav-link" href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    padding-top: 1.25rem;
+    pointer-events: none;
+  }
+
+  .header-inner {
+    width: 100%;
+    padding-inline: var(--page-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .brand,
+  .nav {
+    pointer-events: auto;
+  }
+
+  .brand {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+  }
+
+  .nav-link {
+    position: relative;
+    font-size: var(--text-sm);
+    color: var(--muted);
+    transition: color var(--transition-fast);
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.25rem;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    color: var(--text);
+  }
+
+  .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  @media (max-width: 768px) {
+    .site-header {
+      padding-top: 1rem;
+    }
+
+    .nav {
+      gap: 0.9rem;
+    }
+
+    .nav-link {
+      font-size: 0.78rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .nav-link:nth-child(2),
+    .nav-link:nth-child(3) {
+      display: none;
+    }
+  }
+</style>

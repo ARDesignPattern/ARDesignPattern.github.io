@@ -1,17 +1,423 @@
 ---
-
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Yu Liu — Interaction Designer & HCI/XR Researcher</title>
+
+    <meta
+      name="description"
+      content="Portfolio of Yu Liu — Interaction Design, HCI, XR, immersive experiences, and design research."
+    />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+
+  <body>
+    <Header />
+
+    <main>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-top">
+            <p class="eyebrow">{site.role}</p>
+          </div>
+
+          <h1 class="display hero-title">
+            DESIGNING<br />
+            INTERACTIONS<br />
+            BETWEEN PEOPLE,<br />
+            SPACE & DIGITAL WORLDS.
+          </h1>
+
+          <div class="hero-bottom">
+            <p class="lead">
+              {site.statement}
+            </p>
+
+            <a class="scroll-link" href="#work">
+              Selected work ↓
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section class="section work" id="work">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow">Selected Work</p>
+            <p class="section-index">01 — 04</p>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="project-list">
+            {
+              site.featuredProjects.map((project) => (
+                <a class="project-row" href={project.href}>
+                  <span class="project-number">{project.number}</span>
+
+                  <div class="project-title-wrap">
+                    <h2 class="project-title">{project.title}</h2>
+                    <p class="project-subtitle">{project.subtitle}</p>
+                  </div>
+
+                  <span class="project-arrow">↗</span>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section about" id="about">
+        <div class="container about-grid">
+          <div>
+            <p class="eyebrow">About</p>
+          </div>
+
+          <div>
+            <p class="about-statement">
+              I work across interaction design, immersive technology,
+              prototyping, and human-computer interaction research.
+            </p>
+
+            <p class="about-copy">
+              My background spans industrial design, interaction design,
+              product development, and XR research. I am interested in how
+              digital experiences can become more spatial, intuitive, and
+              meaningful in real-world environments.
+            </p>
+
+            <a class="link-arrow about-link" href="/about/">
+              More about me
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESEARCH -->
+      <section class="section research" id="research">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow">Research</p>
+
+            <a class="link-arrow research-link" href="/research/">
+              View research
+            </a>
+          </div>
+
+          <div class="rule"></div>
+
+          <div class="research-grid">
+            <p class="research-lead">
+              Research-driven design for immersive interaction,
+              cultural heritage, and extended reality.
+            </p>
+
+            <div class="research-meta">
+              <p>HCI</p>
+              <p>XR / AR</p>
+              <p>Interaction Design</p>
+              <p>Design Research</p>
+              <p>User Studies</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
 </html>
+
+<style>
+  /* =========================
+     HERO — DESKTOP DEFAULT
+     ========================= */
+
+  .hero {
+    min-height: 72svh;
+    padding-top: 4.5rem;
+  }
+
+  .hero-inner {
+    min-height: 72svh;
+    display: flex;
+    flex-direction: column;
+    padding:
+      1.5rem
+      var(--page-padding)
+      2rem;
+  }
+
+  .hero-top,
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .hero-location,
+  .section-index {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--text-xs);
+  }
+
+  .hero-title {
+    width: 100%;
+    max-width: none;
+    margin:
+      clamp(2.5rem, 5vh, 4rem)
+      0
+      clamp(2rem, 4vh, 3rem);
+
+    font-size: clamp(4rem, 7vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .scroll-link {
+    flex-shrink: 0;
+    font-size: var(--text-sm);
+    color: var(--muted);
+  }
+
+
+  /* =========================
+     WORK
+     ========================= */
+
+  .project-list {
+    display: grid;
+  }
+
+  .project-row {
+    display: grid;
+    grid-template-columns: 5rem 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    padding-block: clamp(2rem, 4vw, 4rem);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project-number {
+    padding-top: 0.5rem;
+    color: var(--muted);
+    font-size: var(--text-xs);
+  }
+
+  .project-title-wrap {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .project-title {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 5.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+    transition:
+      transform var(--transition-slow),
+      opacity var(--transition-fast);
+  }
+
+  .project-subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+
+  .project-arrow {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    transition: transform var(--transition-slow);
+  }
+
+  .project-row:hover .project-title {
+    transform: translateX(0.35rem);
+  }
+
+  .project-row:hover .project-arrow {
+    transform: translate(0.25rem, -0.25rem);
+  }
+
+
+  /* =========================
+     ABOUT
+     ========================= */
+
+  .about {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  .about .eyebrow {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: clamp(3rem, 8vw, 10rem);
+  }
+
+  .about-statement {
+    max-width: 18ch;
+    margin: 0;
+    font-size: clamp(2.2rem, 5vw, 6rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+  }
+
+  .about-copy {
+    max-width: 44rem;
+    margin: 3rem 0 0;
+    font-size: var(--text-body);
+    color: rgba(0, 0, 0, 0.68);
+  }
+
+  .about-link {
+    margin-top: 2rem;
+  }
+
+
+  /* =========================
+     RESEARCH
+     ========================= */
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: clamp(3rem, 8vw, 10rem);
+    padding-top: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .research-lead {
+    max-width: 16ch;
+    margin: 0;
+    font-size: clamp(2rem, 4.6vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .research-meta {
+    display: grid;
+    align-content: start;
+  }
+
+  .research-meta p {
+    margin: 0;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+
+
+  /* =========================
+     TABLET
+     ========================= */
+
+  @media (max-width: 900px) {
+    .project-row {
+      grid-template-columns: 3rem 1fr auto;
+    }
+
+    .about-grid,
+    .research-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+      gap: 3rem;
+    }
+  }
+
+
+  /* =========================
+     MOBILE / SMALL TABLET
+     ========================= */
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding-top: 4rem;
+    }
+
+    .hero-inner {
+      min-height: auto;
+      padding:
+        1.25rem
+        var(--page-padding)
+        1.75rem;
+    }
+
+    .hero-title {
+      margin: 2.5rem 0 2rem;
+      font-size: clamp(3.2rem, 11vw, 5.5rem);
+      line-height: 0.92;
+    }
+
+    .hero-bottom {
+      display: grid;
+      gap: 1.5rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    .project-row {
+      grid-template-columns: 2rem 1fr auto;
+      gap: 1rem;
+    }
+
+    .project-subtitle {
+      max-width: 18rem;
+    }
+  }
+
+
+  /* =========================
+     SMALL MOBILE
+     ========================= */
+
+  @media (max-width: 520px) {
+    .hero-location {
+      display: none;
+    }
+
+    .project-row {
+      grid-template-columns: 1fr auto;
+    }
+
+    .project-number {
+      grid-column: 1 / -1;
+    }
+
+    .project-arrow {
+      padding-top: 0.2rem;
+    }
+  }
+</style>
