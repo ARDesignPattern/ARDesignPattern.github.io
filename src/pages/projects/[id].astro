@@ -56,11 +56,7 @@ const projectSchema = {
         <p class="project-description">{project.data.description}</p>
 
         <div class="project-meta">
-          {
-            project.data.category.map((item: string) => (
-              <span>{item}</span>
-            ))
-          }
+          {project.data.category.map((item: string) => <span>{item}</span>)}
         </div>
       </div>
     </section>
@@ -87,7 +83,7 @@ const projectSchema = {
   }
 
   .project-heading {
-    max-width: 12ch;
+    max-width: 18ch;
     margin: 1.5rem 0 2rem;
     font-size: clamp(3rem, 8vw, 8rem);
     line-height: 0.92;
