@@ -1,10 +1,14 @@
 export const site = {
   name: "Yu Liu",
+  url: "https://yuliu.design",
 
   role: "Interaction Designer & HCI/XR Researcher",
 
   statement:
     "Designing interactions between people, space, and digital worlds.",
+
+  description:
+    "Portfolio of Yu Liu, an Interaction Designer and HCI/XR Researcher working across augmented reality, immersive interaction, UX research, prototyping, and spatial computing.",
 
   email: "yu.liu.design@outlook.com",
 
@@ -19,4 +23,7 @@ export const site = {
     github: "https://github.com/ARDesignPattern",
     linkedin: "",
   },
+
+  researchPortal:
+    "https://ardesignpattern.github.io/ar-interaction-patterns/",
 };

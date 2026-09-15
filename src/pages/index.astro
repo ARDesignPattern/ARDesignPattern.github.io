@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { site } from "../data/site";
 import { getCollection } from "astro:content";
 import "../styles/global.css";
@@ -10,24 +11,11 @@ const featuredProjects = (await getCollection("projects"))
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Yu Liu — Interaction Designer & HCI/XR Researcher</title>
-
-    <meta
-      name="description"
-      content="Portfolio of Yu Liu — Interaction Design, HCI, XR, immersive experiences, and design research."
-    />
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-  </head>
-
-  <body>
-    <Header />
+<BaseLayout
+  title="Yu Liu — Interaction Designer & HCI/XR Researcher"
+  description={site.description}
+>
+<Header />
 
     <main>
       <!-- HERO -->
@@ -206,8 +194,7 @@ const featuredProjects = (await getCollection("projects"))
         });
       }
     </script>
-  </body>
-</html>
+</BaseLayout>
 
 <style>
   /* =========================

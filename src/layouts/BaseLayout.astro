@@ -1,0 +1,95 @@
+---
+import { site } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  type?: "website" | "article";
+  image?: string;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  type = "website",
+  image,
+  schema,
+  noindex = false,
+} = Astro.props;
+
+const canonicalUrl = canonical
+  ? new URL(canonical, site.url).toString()
+  : new URL(Astro.url.pathname, site.url).toString();
+
+const imageUrl = image ? new URL(image, site.url).toString() : undefined;
+
+const defaultPersonSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  url: site.url,
+  jobTitle: site.role,
+  email: `mailto:${site.email}`,
+  sameAs: Object.values(site.social).filter(Boolean),
+  knowsAbout: [
+    "Interaction Design",
+    "Human-Computer Interaction",
+    "XR",
+    "Augmented Reality",
+    "UX Research",
+    "Spatial Interaction",
+    "Design Research",
+  ],
+};
+
+const structuredData = schema ?? defaultPersonSchema;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+
+    <meta name="twitter:card" content={imageUrl ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    {
+      imageUrl && (
+        <>
+          <meta property="og:image" content={imageUrl} />
+          <meta name="twitter:image" content={imageUrl} />
+        </>
+      )
+    }
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>

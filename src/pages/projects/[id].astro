@@ -2,6 +2,8 @@
 import { getCollection, render } from "astro:content";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site } from "../../data/site";
 import "../../styles/global.css";
 
 export async function getStaticPaths() {
@@ -15,61 +17,65 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
+
+const canonical = `/projects/${project.id}/`;
+
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: project.data.title,
+  description: project.data.description,
+  url: new URL(canonical, site.url).toString(),
+  dateCreated: project.data.year,
+  creator: {
+    "@type": "Person",
+    name: site.name,
+    url: site.url,
+  },
+  about: project.data.category,
+};
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<BaseLayout
+  title={`${project.data.title} — Yu Liu`}
+  description={project.data.description}
+  canonical={canonical}
+  type="article"
+  image={project.data.cover}
+  schema={projectSchema}
+>
+  <Header />
 
-    <title>{project.data.title} — Yu Liu</title>
+  <main class="project-page">
+    <section class="project-hero">
+      <div class="container">
+        <p class="eyebrow">{project.data.year}</p>
 
-    <meta
-      name="description"
-      content={project.data.description}
-    />
-  </head>
+        <h1 class="project-heading">{project.data.title}</h1>
 
-  <body>
-    <Header />
+        <p class="project-description">{project.data.description}</p>
 
-    <main class="project-page">
-      <section class="project-hero">
-        <div class="container">
-          <p class="eyebrow">
-            {project.data.year}
-          </p>
-
-          <h1 class="project-heading">
-            {project.data.title}
-          </h1>
-
-          <p class="project-description">
-            {project.data.description}
-          </p>
-
-          <div class="project-meta">
-            {
-              project.data.category.map((item: string) => (
-                <span>{item}</span>
-              ))
-            }
-          </div>
+        <div class="project-meta">
+          {
+            project.data.category.map((item: string) => (
+              <span>{item}</span>
+            ))
+          }
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="project-content">
-        <div class="container content-grid">
-          <article class="prose">
-            <Content />
-          </article>
-        </div>
-      </section>
-    </main>
+    <section class="project-content">
+      <div class="container content-grid">
+        <article class="prose">
+          <Content />
+        </article>
+      </div>
+    </section>
+  </main>
 
-    <Footer />
-  </body>
-</html>
+  <Footer />
+</BaseLayout>
 
 <style>
   .project-page {
