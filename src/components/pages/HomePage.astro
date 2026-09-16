@@ -15,8 +15,14 @@ interface Props {
 const { lang = "en" } = Astro.props;
 const t = ui[lang];
 
-const featuredProjects = (await getCollection("projects"))
+const projects = await getCollection("projects");
+
+const featuredProjects = projects
   .filter((project) => project.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const moreProjects = projects
+  .filter((project) => !project.data.featured)
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
@@ -100,6 +106,46 @@ const featuredProjects = (await getCollection("projects"))
       </div>
     </section>
 
+    <!-- MORE WORK -->
+    <section class="section more-work scroll-reveal" id="more-work" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">More Work</p>
+
+          <p class="section-index">
+            01 — {String(moreProjects.length).padStart(2, "0")}
+          </p>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="project-list more-project-list">
+          {
+            moreProjects.map((project, index) => (
+              <a
+                class="project-row"
+                href={localizePath(`/projects/${project.id}/`, lang)}
+              >
+                <span class="project-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <div class="project-title-wrap">
+                  <h2 class="project-title">{project.data.title}</h2>
+
+                  <p class="project-subtitle">
+                    {project.data.category.join(" · ")}
+                  </p>
+                </div>
+
+                <span class="project-arrow">↗</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
     <!-- ABOUT -->
     <section class="section about scroll-reveal" id="about" data-reveal>
       <div class="container about-grid">
@@ -116,7 +162,7 @@ const featuredProjects = (await getCollection("projects"))
             {t.home.aboutBody}
           </p>
 
-          <a class="link-arrow about-link" href="/about/">
+          <a class="link-arrow about-link" href={localizePath("/about/", lang)}>
             {t.home.moreAbout}
           </a>
         </div>

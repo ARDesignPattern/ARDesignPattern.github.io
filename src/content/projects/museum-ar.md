@@ -1,46 +1,48 @@
 ---
-title: "Designing Walk-up AR Experiences for Museums"
-description: "From field-deployed HMD-AR prototypes to a reusable interaction pattern language for museum experiences."
+title: "Designing Walk-up XR for Real-World Environments"
+
+description: "Using museums as a real-world testbed for making spatial XR easier to design, learn, and use."
+
 year: "2026"
+
 category:
   - "Interaction Design"
   - "HCI"
   - "XR / AR"
   - "Cultural Heritage"
+
 cover: "/images/projects/museum-ar/hero.jpg"
+
 featured: true
+
 order: 1
 ---
 
 ## Overview
 
-I design and evaluate head-mounted AR interactions for real museum environments, with a focus on first-time visitors who need to understand where to go, what to look at, and how to interact without prior training.
+As XR technology becomes more mature, the challenge is no longer only making the technology work, but making it understandable and usable in real-world settings.
+
+Museums became my main testbed for this problem: visitors are often first-time HMD users, while creators need interaction designs that work across different exhibits, spaces, and visitor situations.
 
 ![Museum AR experience](/images/projects/museum-ar/hero.jpg)
 
-## What I Designed
+## Designing for Real Environments
 
-### Spatial Guidance
-
-Spatial markers and directional cues help visitors understand where an AR experience begins and how to position themselves in relation to the exhibit.
+I design and develop working XR prototypes around the characteristics of physical environments, including spatial layout, exhibits, visitor movement, and device constraints.
 
 ![Step-in Circle interaction](/images/projects/museum-ar/EnteringCircle.gif)
 
-### Exhibit-Linked Content
-
-AR labels, animations, and virtual models are anchored directly to physical exhibits so visitors can understand digital information in context rather than on a separate screen.
+The prototypes explore how first-time users can understand where to go, what to look at, and how to interact without prior training.
 
 ![Exhibit-linked AR content](/images/projects/museum-ar/Labelling.gif)
 
-### Interaction Controls
-
-I explored hand-based and exhibit-anchored controls for navigating content while keeping attention on the surrounding exhibition environment.
+I then use these prototypes in real settings to study how interaction design performs outside controlled laboratory conditions.
 
 ![AR interaction controls](/images/projects/museum-ar/SequentialExploration.gif)
 
 ## In the Field
 
-The prototypes were deployed and evaluated with museum visitors in real exhibition environments in Germany and Portugal.
+The prototypes were developed, deployed, and evaluated with museum visitors in real exhibition environments in Germany and Portugal.
 
 ![Field deployment in Germany](/images/projects/museum-ar/Deployed_Germany.jpg)
 
@@ -50,12 +52,15 @@ _Senckenberg Natural History Museum, Frankfurt am Main, Germany._
 
 _Natural History Museum of Funchal, Madeira, Portugal._
 
-## Outcome
+## My Role
 
-The work resulted in a reusable, parameterized interaction pattern language for HMD-based museum AR, grounded in repeated field deployment and user evaluation.
+I develop XR prototypes for real environments and use field deployment and user evaluation to derive interaction design knowledge.
 
-- Designed and deployed XR interactions in real museum environments
-- Evaluated first-time user behavior using mixed methods
-- Worked across Microsoft HoloLens 2 and Meta Quest 3
-- Translated empirical findings into reusable interaction design knowledge
-- Published related work at ACM IMX, DIS, and HCII
+- Interaction design and XR prototyping
+- Real-world deployment and iteration
+- UX and interaction evaluation
+- Translating observations into reusable design knowledge
+
+## Broader Goal
+
+Museums are the main application context in this work, but the broader goal is to understand how spatial XR interaction can become easier to design, learn, and use across real-world environments.
