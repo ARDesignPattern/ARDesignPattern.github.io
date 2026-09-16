@@ -1,0 +1,182 @@
+---
+import { render } from "astro:content";
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site } from "../../data/site";
+import { ui, type Locale } from "../../i18n/ui";
+import "../../styles/global.css";
+
+interface Props {
+  project: any;
+  lang?: Locale;
+  showEnglishOnly?: boolean;
+}
+
+const { project, lang = "en", showEnglishOnly = false } = Astro.props;
+
+const t = ui[lang];
+
+const { Content } = await render(project);
+
+const canonical = `/projects/${project.id}/`;
+
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: project.data.title,
+  description: project.data.description,
+  url: new URL(canonical, site.url).toString(),
+  dateCreated: project.data.year,
+  creator: {
+    "@type": "Person",
+    name: site.name,
+    url: site.url,
+  },
+  about: project.data.category,
+};
+---
+
+<BaseLayout
+  title={`${project.data.title} — Yu Liu`}
+  description={project.data.description}
+  canonical={canonical}
+  type="article"
+  image={project.data.cover}
+  schema={projectSchema}
+  lang={lang}
+>
+  <Header lang={lang} />
+
+  <main class="project-page">
+    {
+      showEnglishOnly && (
+        <div class="language-notice">
+          <div class="container">
+            <p>{t.project.englishOnly}</p>
+          </div>
+        </div>
+      )
+    }
+
+    <section class="project-hero">
+      <div class="container">
+        <p class="eyebrow">{project.data.year}</p>
+
+        <h1 class="project-heading">
+          {project.data.title}
+        </h1>
+
+        <p class="project-description">
+          {project.data.description}
+        </p>
+
+        <div class="project-meta">
+          {project.data.category.map((item: string) => <span>{item}</span>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="project-content">
+      <div class="container content-grid">
+        <article class="prose">
+          <Content />
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .language-notice {
+    padding-top: 1rem;
+  }
+
+  .language-notice p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .project-page {
+    min-height: 100vh;
+    padding-top: 7rem;
+    background: #0a0a0a;
+    color: #f5f5f5;
+  }
+
+  .project-hero {
+    padding-block: clamp(3rem, 7vw, 8rem);
+  }
+
+  .project-heading {
+    max-width: 18ch;
+    margin: 1.5rem 0 2rem;
+    font-size: clamp(3rem, 8vw, 8rem);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+    font-weight: 600;
+  }
+
+  .project-description {
+    max-width: 44rem;
+    margin: 0;
+    font-size: var(--text-md);
+    line-height: 1.2;
+    color: var(--muted);
+  }
+
+  .project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .project-meta span {
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  .project-content {
+    padding-block: 2rem var(--section-gap);
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .prose {
+    max-width: 52rem;
+  }
+
+  .prose :global(h2) {
+    margin: 4rem 0 1.25rem;
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .prose :global(p) {
+    margin: 0 0 1.5rem;
+    color: var(--muted);
+    font-size: var(--text-body);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 768px) {
+    .project-page {
+      padding-top: 5rem;
+    }
+
+    .project-heading {
+      max-width: none;
+    }
+  }
+</style>

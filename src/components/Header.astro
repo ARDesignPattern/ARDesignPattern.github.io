@@ -1,26 +1,55 @@
 ---
 import { site } from "../data/site";
+import { ui, type Locale } from "../i18n/ui";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { localizePath } from "../i18n/utils";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "en" } = Astro.props;
+const t = ui[lang];
 ---
 
 <header class="site-header" id="site-header">
   <div class="header-inner">
-    <a class="brand" href="/" aria-label="Yu Liu home">
+    <a class="brand" href={localizePath("/", lang)} aria-label="Yu Liu home">
       {site.name}
     </a>
 
-    <nav class="nav" aria-label="Primary navigation">
-      {
-        site.navigation.map((item) => (
-          <a class="nav-link" href={item.href}>
-            {item.label}
-          </a>
-        ))
-      }
-    </nav>
+    <div class="header-right">
+      <nav class="nav">
+        <a class="nav-link" href={localizePath("/#work", lang)}>
+          {t.nav.work}
+        </a>
+
+        <a class="nav-link" href={localizePath("/about/", lang)}>
+          {t.nav.about}
+        </a>
+
+        <a class="nav-link" href={localizePath("/#research", lang)}>
+          {t.nav.research}
+        </a>
+
+        <a class="nav-link" href={localizePath("/#contact", lang)}>
+          {t.nav.contact}
+        </a>
+      </nav>
+
+      <LanguageSwitcher lang={lang} />
+    </div>
   </div>
 </header>
 
 <style>
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    pointer-events: auto;
+  }
+
   .site-header {
     position: fixed;
     inset: 0 0 auto 0;

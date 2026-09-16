@@ -1,0 +1,505 @@
+---
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site } from "../../data/site";
+import { getCollection } from "astro:content";
+import "../../styles/global.css";
+import { ui, type Locale } from "../../i18n/ui";
+import { localizePath } from "../../i18n/utils";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "en" } = Astro.props;
+const t = ui[lang];
+
+const featuredProjects = (await getCollection("projects"))
+  .filter((project) => project.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Yu Liu — Interaction Designer & HCI/XR Researcher"
+  description={site.description}
+  lang={lang}
+  alternateLanguages={[
+    { lang: "en", href: "/" },
+    { lang: "de", href: "/de/" },
+    { lang: "zh-Hans", href: "/zh/" },
+  ]}
+>
+  <Header lang={lang} />
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-top">
+          <p class="eyebrow hero-reveal hero-reveal-1">{t.home.role}</p>
+        </div>
+
+        <h1 class="display hero-title hero-reveal hero-reveal-2">
+          {
+            t.home.heroTitle.map((line) => (
+              <>
+                {line}
+                <br />
+              </>
+            ))
+          }
+        </h1>
+
+        <div class="hero-bottom hero-reveal hero-reveal-3">
+          <p class="lead">
+            {t.home.statement}
+          </p>
+
+          <a class="scroll-link" href="#work"> {t.home.selectedWorkLink} </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section work scroll-reveal" id="work" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">{t.home.selectedWork}</p>
+          <p class="section-index">
+            01 — {String(featuredProjects.length).padStart(2, "0")}
+          </p>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="project-list">
+          {
+            featuredProjects.map((project, index) => (
+              <a
+                class="project-row"
+                href={localizePath(`/projects/${project.id}/`, lang)}
+              >
+                <span class="project-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <div class="project-title-wrap">
+                  <h2 class="project-title">{project.data.title}</h2>
+
+                  <p class="project-subtitle">
+                    {project.data.category.join(" · ")}
+                  </p>
+                </div>
+
+                <span class="project-arrow">↗</span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about scroll-reveal" id="about" data-reveal>
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">About</p>
+        </div>
+
+        <div>
+          <p class="about-statement">
+            {t.home.aboutTitle}
+          </p>
+
+          <p class="about-copy">
+            {t.home.aboutBody}
+          </p>
+
+          <a class="link-arrow about-link" href="/about/">
+            {t.home.moreAbout}
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section class="section research scroll-reveal" id="research" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Research</p>
+          <a
+            class="link-arrow research-link"
+            href="https://ardesignpattern.github.io/ar-interaction-patterns/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.home.viewResearch}
+          </a>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="research-grid">
+          <p class="research-lead">
+            {t.home.researchLead}
+          </p>
+
+          <div class="research-meta">
+            {t.home.researchTags.map((tag) => <p>{tag}</p>)}
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+  <script>
+    const header = document.querySelector<HTMLElement>("#site-header");
+
+    const updateHeader = () => {
+      if (!header) return;
+
+      if (window.scrollY > 40) {
+        header.classList.add("is-scrolled");
+      } else {
+        header.classList.remove("is-scrolled");
+      }
+    };
+
+    updateHeader();
+
+    window.addEventListener("scroll", updateHeader, {
+      passive: true,
+    });
+
+    const revealItems = document.querySelectorAll<HTMLElement>("[data-reveal]");
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      },
+    );
+
+    revealItems.forEach((item) => {
+      revealObserver.observe(item);
+    });
+
+    const hero = document.querySelector<HTMLElement>("#hero");
+
+    if (hero) {
+      hero.addEventListener("pointermove", (event: PointerEvent) => {
+        const rect = hero.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        hero.style.setProperty("--mouse-x", `${x}px`);
+        hero.style.setProperty("--mouse-y", `${y}px`);
+      });
+    }
+  </script>
+</BaseLayout>
+
+<style>
+  /* =========================
+     HERO — DESKTOP DEFAULT
+     ========================= */
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 72svh;
+    padding-top: 4.5rem;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background: radial-gradient(
+      260px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgb(0, 0, 0),
+      rgba(82, 82, 82, 0.781) 35%,
+      transparent 70%
+    );
+
+    opacity: 0.9;
+  }
+
+  .hero-inner {
+    min-height: 72svh;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem var(--page-padding) 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-top,
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .hero-location,
+  .section-index {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--text-xs);
+  }
+
+  .hero-title {
+    width: 100%;
+    max-width: none;
+    margin: clamp(2.5rem, 5vh, 4rem) 0 clamp(2rem, 4vh, 3rem);
+
+    font-size: clamp(4rem, 7vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -0.055em;
+  }
+
+  .hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .scroll-link {
+    flex-shrink: 0;
+    font-size: var(--text-sm);
+    color: var(--muted);
+  }
+
+  /* =========================
+     WORK
+     ========================= */
+
+  .project-list {
+    display: grid;
+  }
+
+  .project-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 5rem 1fr auto;
+    gap: 2rem;
+    align-items: start;
+    padding-block: clamp(2rem, 4vw, 4rem);
+    border-bottom: 1px solid var(--line);
+    transition:
+      background-color 300ms ease,
+      padding-inline 300ms ease;
+  }
+
+  .project-row:hover {
+    background: rgba(255, 255, 255, 0.035);
+    padding-inline: 1rem;
+  }
+
+  .project-number {
+    padding-top: 0.5rem;
+    color: var(--muted);
+    font-size: var(--text-xs);
+  }
+
+  .project-title-wrap {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .project-title {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 5.8rem);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+    transition:
+      transform var(--transition-slow),
+      opacity var(--transition-fast);
+  }
+
+  .project-subtitle {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+
+  .project-arrow {
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    transition: transform var(--transition-slow);
+  }
+
+  .project-row:hover .project-title {
+    transform: translateX(0.35rem);
+  }
+
+  .project-row:hover .project-arrow {
+    transform: translate(0.25rem, -0.25rem);
+  }
+
+  /* =========================
+     ABOUT
+     ========================= */
+
+  .about {
+    background: var(--text);
+    color: var(--bg);
+  }
+
+  .about .eyebrow {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: clamp(3rem, 8vw, 10rem);
+  }
+
+  .about-statement {
+    max-width: 18ch;
+    margin: 0;
+    font-size: clamp(2.2rem, 5vw, 6rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    font-weight: 600;
+  }
+
+  .about-copy {
+    max-width: 44rem;
+    margin: 3rem 0 0;
+    font-size: var(--text-body);
+    color: rgba(0, 0, 0, 0.68);
+  }
+
+  .about-link {
+    margin-top: 2rem;
+  }
+
+  /* =========================
+     RESEARCH
+     ========================= */
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: clamp(3rem, 8vw, 10rem);
+    padding-top: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .research-lead {
+    max-width: 16ch;
+    margin: 0;
+    font-size: clamp(2rem, 4.6vw, 5rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .research-meta {
+    display: grid;
+    align-content: start;
+  }
+
+  .research-meta p {
+    margin: 0;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+
+  /* =========================
+     TABLET
+     ========================= */
+
+  @media (max-width: 900px) {
+    .project-row {
+      grid-template-columns: 3rem 1fr auto;
+    }
+
+    .about-grid,
+    .research-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+      gap: 3rem;
+    }
+  }
+
+  /* =========================
+     MOBILE / SMALL TABLET
+     ========================= */
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: auto;
+      padding-top: 4rem;
+    }
+
+    .hero-inner {
+      min-height: auto;
+      padding: 1.25rem var(--page-padding) 1.75rem;
+    }
+
+    .hero-title {
+      margin: 2.5rem 0 2rem;
+      font-size: clamp(3.2rem, 11vw, 5.5rem);
+      line-height: 0.92;
+    }
+
+    .hero-bottom {
+      display: grid;
+      gap: 1.5rem;
+      align-items: start;
+      margin-top: 2rem;
+    }
+
+    .project-row {
+      grid-template-columns: 2rem 1fr auto;
+      gap: 1rem;
+    }
+
+    .project-subtitle {
+      max-width: 18rem;
+    }
+  }
+
+  /* =========================
+     SMALL MOBILE
+     ========================= */
+
+  @media (max-width: 520px) {
+    .hero-location {
+      display: none;
+    }
+
+    .project-row {
+      grid-template-columns: 1fr auto;
+    }
+
+    .project-number {
+      grid-column: 1 / -1;
+    }
+
+    .project-arrow {
+      padding-top: 0.2rem;
+    }
+  }
+</style>

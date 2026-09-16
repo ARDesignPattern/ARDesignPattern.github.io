@@ -9,6 +9,13 @@ interface Props {
   image?: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
   noindex?: boolean;
+
+  lang?: "en" | "de" | "zh";
+
+  alternateLanguages?: {
+    lang: "en" | "de" | "zh-Hans";
+    href: string;
+  }[];
 }
 
 const {
@@ -19,6 +26,8 @@ const {
   image,
   schema,
   noindex = false,
+  lang = "en",
+  alternateLanguages = [],
 } = Astro.props;
 
 const canonicalUrl = canonical
@@ -26,6 +35,8 @@ const canonicalUrl = canonical
   : new URL(Astro.url.pathname, site.url).toString();
 
 const imageUrl = image ? new URL(image, site.url).toString() : undefined;
+
+const htmlLang = lang === "zh" ? "zh-Hans" : lang;
 
 const defaultPersonSchema = {
   "@context": "https://schema.org",
@@ -50,38 +61,85 @@ const structuredData = schema ?? defaultPersonSchema;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>{title}</title>
+
     <meta name="description" content={description} />
+
     <link rel="canonical" href={canonicalUrl} />
 
-    <meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow"} />
+    {
+      alternateLanguages.map((item) => (
+        <link
+          rel="alternate"
+          hreflang={item.lang}
+          href={new URL(item.href, site.url).toString()}
+        />
+      ))
+    }
+
+    {
+      alternateLanguages.length > 0 && (
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={new URL(
+            alternateLanguages.find((item) => item.lang === "en")?.href ?? "/",
+            site.url,
+          ).toString()}
+        />
+      )
+    }
+
+    <meta
+      name="robots"
+      content={noindex ? "noindex, nofollow" : "index, follow"}
+    />
 
     <meta property="og:type" content={type} />
+
     <meta property="og:site_name" content={site.name} />
+
     <meta property="og:title" content={title} />
+
     <meta property="og:description" content={description} />
+
     <meta property="og:url" content={canonicalUrl} />
 
-    <meta name="twitter:card" content={imageUrl ? "summary_large_image" : "summary"} />
+    <meta
+      name="twitter:card"
+      content={imageUrl ? "summary_large_image" : "summary"}
+    />
+
     <meta name="twitter:title" content={title} />
+
     <meta name="twitter:description" content={description} />
 
     {
       imageUrl && (
         <>
           <meta property="og:image" content={imageUrl} />
+
           <meta name="twitter:image" content={imageUrl} />
         </>
       )
     }
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
     <link rel="icon" href="/favicon.ico" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <link rel="manifest" href="/site.webmanifest" />
 
     <script
       type="application/ld+json"

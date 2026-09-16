@@ -1,0 +1,81 @@
+---
+import type { Locale } from "../i18n/ui";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "en" } = Astro.props;
+
+const pathname = Astro.url.pathname;
+
+function getLocalizedPath(targetLang: Locale) {
+  let path = pathname;
+
+  if (path.startsWith("/de/")) {
+    path = path.replace(/^\/de/, "");
+  } else if (path.startsWith("/zh/")) {
+    path = path.replace(/^\/zh/, "");
+  }
+
+  if (!path.startsWith("/")) {
+    path = `/${path}`;
+  }
+
+  if (targetLang === "en") {
+    return path || "/";
+  }
+
+  return `/${targetLang}${path}`;
+}
+---
+
+<div class="language-switcher" aria-label="Language switcher">
+  <a
+    href={getLocalizedPath("en")}
+    class:list={["language-link", { active: lang === "en" }]}
+  >
+    EN
+  </a>
+
+  <span class="language-separator">/</span>
+
+  <a
+    href={getLocalizedPath("de")}
+    class:list={["language-link", { active: lang === "de" }]}
+  >
+    DE
+  </a>
+
+  <span class="language-separator">/</span>
+
+  <a
+    href={getLocalizedPath("zh")}
+    class:list={["language-link", { active: lang === "zh" }]}
+  >
+    中文
+  </a>
+</div>
+
+<style>
+  .language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: var(--text-xs);
+  }
+
+  .language-link {
+    color: var(--muted);
+    transition: color var(--transition-fast);
+  }
+
+  .language-link:hover,
+  .language-link.active {
+    color: var(--text);
+  }
+
+  .language-separator {
+    color: var(--line);
+  }
+</style>

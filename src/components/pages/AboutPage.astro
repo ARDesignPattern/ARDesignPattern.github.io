@@ -1,0 +1,207 @@
+---
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { site } from "../../data/site";
+import { ui, type Locale } from "../../i18n/ui";
+import "../../styles/global.css";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang = "en" } = Astro.props;
+const t = ui[lang];
+---
+
+<BaseLayout
+  title="About Yu Liu — Interaction Designer & HCI/XR Researcher"
+  description="Learn more about Yu Liu's background in industrial design, interaction design, HCI, XR research, prototyping, and immersive experiences."
+  lang={lang}
+  alternateLanguages={[
+    { lang: "en", href: "/about/" },
+    { lang: "de", href: "/de/about/" },
+    { lang: "zh-Hans", href: "/zh/about/" },
+  ]}
+>
+  <Header lang={lang} />
+
+  <main class="about-page">
+    <!-- HERO -->
+    <section class="about-hero">
+      <div class="container">
+        <p class="eyebrow">{t.about.eyebrow}</p>
+
+        <h1 class="about-title">
+          {t.about.title}
+        </h1>
+
+        <p class="about-intro">
+          {t.about.intro}
+        </p>
+      </div>
+    </section>
+
+    <!-- BACKGROUND -->
+    <section class="about-section">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">{t.about.backgroundTitle}</p>
+        </div>
+
+        <div class="about-copy">
+          <p>{t.about.backgroundBody}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I DO -->
+    <section class="about-section">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">{t.about.workTitle}</p>
+        </div>
+
+        <div class="about-copy">
+          <p>{t.about.workBody}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section class="about-section">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">{t.about.approachTitle}</p>
+        </div>
+
+        <div class="about-copy">
+          <p>{t.about.approachBody}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="about-section">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">{t.about.contactTitle}</p>
+        </div>
+
+        <div>
+          <p class="contact-lead">
+            {t.about.contactLead}
+          </p>
+
+          <a class="contact-link" href={`mailto:${site.email}`}>
+            {site.email} ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .about-page {
+    padding-top: 7rem;
+  }
+
+  .about-hero {
+    padding-block: clamp(4rem, 9vw, 9rem);
+  }
+
+  .about-title {
+    max-width: 15ch;
+    margin: 1.5rem 0 2rem;
+    font-size: clamp(3.2rem, 7vw, 7.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+    font-weight: 600;
+  }
+
+  .about-intro {
+    max-width: 42rem;
+    margin: 0;
+    font-size: var(--text-md);
+    line-height: 1.25;
+    color: var(--muted);
+  }
+
+  .about-section {
+    padding-block: clamp(4rem, 8vw, 8rem);
+    border-top: 1px solid var(--line);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: minmax(10rem, 0.7fr) minmax(0, 1.8fr);
+    gap: clamp(2rem, 6vw, 7rem);
+  }
+
+  .about-copy {
+    max-width: 48rem;
+  }
+
+  .about-copy p {
+    margin: 0 0 1.5rem;
+    font-size: var(--text-body);
+    line-height: 1.65;
+    color: var(--muted);
+  }
+
+  .expertise-list {
+    border-top: 1px solid var(--line);
+  }
+
+  .expertise-row {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .expertise-row span {
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  .expertise-row h2 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3.6vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+  }
+
+  .contact-lead {
+    max-width: 34rem;
+    margin: 0 0 1.5rem;
+    font-size: var(--text-md);
+    line-height: 1.25;
+  }
+
+  .contact-link {
+    font-size: var(--text-body);
+    color: var(--text);
+  }
+
+  @media (max-width: 768px) {
+    .about-page {
+      padding-top: 5rem;
+    }
+
+    .about-title {
+      max-width: none;
+    }
+
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
