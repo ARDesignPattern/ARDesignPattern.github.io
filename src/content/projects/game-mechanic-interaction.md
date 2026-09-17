@@ -28,19 +28,34 @@ The goal was to balance **playfulness, exploration, and learning**.
 
 ## Puzzle-Based Interaction
 
-![Triceratops Reassembler](/images/projects/game-mechanic/reassembler.gif)
+![Triceratops Reassembler](/images/projects/game-mechanic-interaction/Placing.jpg)
+
+<div class="demo-links">
+<a class="demo-link" href="https://youtu.be/pYIqsSc2lLg?si=cvWOnm3kDu0bXJGy" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+<a class="demo-link" href="" target="_blank" rel="noopener noreferrer">Watch on Bilibili ↗</a>
+</div>
 
 Visitors reconstruct parts of a Triceratops around the physical exhibit, using spatial assembly as a way to observe and understand its structure.
 
 ## Drawing-Based Interaction
 
-![Deinonychus Feature Drawing](/images/projects/game-mechanic/feature-drawing.gif)
+![Deinonychus Feature Drawing](/images/projects/game-mechanic-interaction/Drawing.jpg)
+
+<div class="demo-links">
+<a class="demo-link" href="https://youtu.be/UrQMUq3n9PA?si=CSHxD-NgbFv8P0Bo" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+<a class="demo-link" href="" target="_blank" rel="noopener noreferrer">Watch on Bilibili ↗</a>
+</div>
 
 Visitors trace and reveal anatomical features through hand-based drawing, using interaction to direct attention toward important details.
 
 ## Action-Based Interaction
 
-![Coral Reef Object Catching](/images/projects/game-mechanic/object-catching.gif)
+![Coral Reef Object Catching](/images/projects/game-mechanic-interaction/Catching.png)
+
+<div class="demo-links">
+<a class="demo-link" href="https://youtu.be/3VmuF4z6loY?si=XPFBSdySAftSHcFK" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a>
+<a class="demo-link" href="" target="_blank" rel="noopener noreferrer">Watch on Bilibili ↗</a>
+</div>
 
 Visitors move through the environment to identify and catch virtual objects, combining exploration, movement, and learning.
 

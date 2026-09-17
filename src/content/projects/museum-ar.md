@@ -24,7 +24,44 @@ As XR technology becomes more mature, the challenge is no longer only making the
 
 Museums became my main testbed for this problem: visitors are often first-time HMD users, while creators need interaction designs that work across different exhibits, spaces, and visitor situations.
 
-![Museum AR experience](/images/projects/museum-ar/hero.jpg)
+<div class="hero-video">
+  <div class="video-switcher">
+    <button class="video-switch active" data-platform="youtube">YouTube</button>
+    <button class="video-switch" data-platform="bilibili">Bilibili</button>
+  </div>
+
+  <div class="video-frame">
+    <iframe
+      id="hero-video-player"
+      src="https://www.youtube-nocookie.com/embed/Q7GGMHvsuNg"
+      title="Museum XR Demo Video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<script>
+  const player = document.getElementById("hero-video-player");
+  const buttons = document.querySelectorAll(".video-switch");
+
+  const sources = {
+    youtube: "https://www.youtube-nocookie.com/embed/Q7GGMHvsuNg",
+    bilibili: "https://player.bilibili.com/player.html?bvid=BV1gtec6kEGy&page=1",
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const platform = button.dataset.platform;
+      player.src = sources[platform];
+
+      buttons.forEach((btn) => {
+        btn.classList.toggle("active", btn === button);
+      });
+    });
+  });
+</script>
 
 ## Designing for Real Environments
 
