@@ -1,14 +1,17 @@
 ---
 title: "Designing Museum XR Without Starting from Scratch"
 
-description: "A reusable two-level pattern system for designing and adapting XR interactions in museums and cultural heritage."
+description: "Turning repeated museum XR design problems into a reusable interaction pattern system."
 
 year: "2022–2026"
 
 category:
   - "Interaction Design"
+
   - "HCI"
+
   - "XR / AR"
+
   - "Design Systems"
 
 cover: "/images/projects/design-patterns/cover.jpg"
@@ -20,46 +23,58 @@ order: 2
 
 ## From Prototypes to Reusable Design Knowledge
 
-Museum XR experiences often face similar interaction problems, but are still designed as one-off solutions.
+Museum XR projects often face similar interaction problems, but solutions are still frequently designed from scratch.
 
-I developed a pattern system that captures recurring interaction problems, tested design strategies, and the parameters needed to adapt them across different exhibits, spaces, technologies, and visitor situations.
+I developed a two-level pattern system that captures recurring interaction problems, tested solutions, and the parameters needed to adapt them across different exhibits, spaces, technologies, and visitor situations.
 
-The goal is simple: **reuse what has already been learned instead of starting from scratch.**
+The goal is simple: **reuse what has already been learned.**
 
-## Two Levels of Patterns
+## The System
 
-### Application-Level Patterns
+The system combines:
 
-Practical interaction solutions that designers can directly adapt to museum XR experiences.
+![Two-Level Pattern System](/images/projects/parameterized-design-patterns/two_level_pattern_system.png)
 
-They address recurring needs such as guiding visitors, presenting content, structuring interaction, and supporting playful activities.
+<p class="figure-note">
+  *AI-generated visualization created to support understanding of the pattern system.
+  See the <a href="https://yuliu.design/ar-interaction-patterns/patterns.html" target="_blank" rel="noopener noreferrer">research page ↗</a>
+  for the original research framework, pattern definitions, and supporting studies.
+</p>
 
-### Category-Level Patterns
+- **Application-Level Patterns** — concrete interaction solutions that can be reused directly
 
-Higher-level structures that describe how interaction solutions can be adapted across different museum and cultural heritage contexts.
+- **Category-Level Patterns** — higher-level structures for adapting and extending those solutions
 
-Together, the two levels support both **reuse and further design exploration**.
+Together, they turn individual XR prototypes into reusable design knowledge for museums and cultural heritage.
 
-## Built from Real Museum XR Projects
+## Example Compositions
 
-The system emerged from repeated prototype development, field deployment, and user evaluation across museum and cultural heritage projects in Germany and Portugal.
+The pattern system can also be combined into larger interaction flows for common museum situations.
+
+![Example Pattern Compositions](/images/projects/parameterized-design-patterns/Example_Pattern_Compisition.png)
+
+<p class="figure-note">
+  *AI-generated visualization created to support understanding of the pattern system.
+  See the <a href="https://yuliu.design/ar-interaction-patterns/patterns.html" target="_blank" rel="noopener noreferrer">research page ↗</a>
+  for the original research framework, pattern definitions, and supporting studies.
+</p>
+
+## My Role
+
+I translated field-tested XR interaction solutions into a reusable and parameterized design system.
+
+**Pattern Abstraction · Design System Development · Field Validation**
+
+## Built from Real Projects
+
+The system emerged from repeated prototype development, deployment, and evaluation across museum and cultural heritage projects in Germany and Portugal.
 
 [presentXR ↗](https://presentxr.de/)
 
 [LoGaCulture ↗](https://logaculture.eu/)
 
-## My Role
+## Explore the Research
 
-I translated recurring interaction problems and field-tested solutions into a reusable and parameterized design system.
-
-- Identifying recurring interaction problems
-- Abstracting solutions into reusable patterns
-- Defining adaptation parameters
-- Connecting individual patterns into a larger system
-- Evaluating the system through field studies and expert review
-
-## Pattern Library
-
-The full library includes individual patterns, relationships, parameters, publications, and supporting research.
+The full research version includes individual patterns, relationships, parameters, publications, and supporting studies.
 
 [Explore the AR Interaction Pattern Library ↗](https://ardesignpattern.github.io/ar-interaction-patterns/)
