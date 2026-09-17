@@ -11,6 +11,7 @@ interface Props {
 }
 
 interface Publication {
+  slug?: string;
   year: string;
   title: string;
   authors: string[];
@@ -18,6 +19,7 @@ interface Publication {
   type: string;
   doi?: string;
   url?: string;
+  image?: string;
   abstract?: string;
   topics?: string[];
 }
@@ -75,32 +77,32 @@ const years = Object.keys(groupedPublications).sort(
               <div class="publication-items">
                 {groupedPublications[year].map((publication) => (
                   <article class="publication-item">
+                    <p class="publication-meta">
+                      {publication.venue} · {publication.year}
+                    </p>
+
                     <h2>{publication.title}</h2>
 
                     <p class="publication-authors">
                       {publication.authors.join(", ")}
                     </p>
 
-                    <p class="publication-venue">{publication.venue}</p>
-
                     <div class="publication-links">
+                      {publication.slug && (
+                        <a
+                          href={`https://yuliu.design/ar-interaction-patterns/literature.html#${publication.slug}`}
+                        >
+                          Abstract
+                        </a>
+                      )}
+
                       {publication.doi && (
                         <a
                           href={`https://doi.org/${publication.doi}`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          DOI ↗
-                        </a>
-                      )}
-
-                      {publication.url && (
-                        <a
-                          href={publication.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          View publication ↗
+                          DOI
                         </a>
                       )}
                     </div>
@@ -162,12 +164,46 @@ const years = Object.keys(groupedPublications).sort(
   }
 
   .publication-item h2 {
-    max-width: 34ch;
-    margin: 0 0 1rem;
-    font-size: clamp(1.6rem, 2.8vw, 2.8rem);
-    line-height: 1.05;
-    letter-spacing: -0.03em;
+    max-width: 46ch;
+    margin: 0.45rem 0 0.75rem;
+    font-size: clamp(1.35rem, 2vw, 2rem);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
     font-weight: 500;
+  }
+
+  .publication-meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .publication-authors {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .publication-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.85rem;
+  }
+
+  .publication-links a {
+    color: var(--text);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .publication-item {
+    padding: 0 0 2rem;
+  }
+
+  .publication-item + .publication-item {
+    padding-top: 2rem;
   }
 
   .publication-authors,
