@@ -1,18 +1,50 @@
 [
   {
+    "slug": "pattern-language-hmd-ar-museums",
+    "authorRole": "first-author",
     "year": "2026",
     "title": "A Pattern Language for Head-Mounted AR in Museums: Parameterized, Composable, and Reproducible",
     "authors": ["Yu Liu", "Ulrike Spierling"],
-    "venue": "ACM International Conference on Interactive Media Experiences (IMX)",
+    "venue": "ACM International Conference on Interactive Media Experiences (IMX), 2026, pp. 46–64",
     "type": "Conference Paper",
     "doi": "10.1145/3788851.3805010",
     "url": "",
+    "image": "",
     "abstract": "",
-    "topics": ["HCI", "HMD-AR", "Design Patterns", "Museums"],
-    "image": "https://yuliu.design/images/projects/parameterized-design-patterns/two_level_pattern_system.png",
-    "abstract": "This paper presents a reusable interaction design pattern language for head-mounted augmented reality in museum environments."
+    "topics": ["HCI", "HMD-AR", "Design Patterns", "Museums"]
   },
   {
+    "slug": "relational-interactivity-hybrid-museological-spaces",
+    "authorRole": "co-author",
+    "year": "2026",
+    "title": "Towards Relational Interactivity: Investigating More-than-Human Engagement in Hybrid Museological Spaces",
+    "authors": [
+      "P. Galvão-Ferreira",
+      "M. Ferreira",
+      "Yu Liu",
+      "N. Kräuter",
+      "T. Paulino",
+      "B. Soybilge",
+      "N. Nunes",
+      "Ulrike Spierling",
+      "V. Nisi"
+    ],
+    "venue": "International Journal of Human-Computer Interaction, 2026, forthcoming",
+    "type": "Journal Article",
+    "doi": "",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": [
+      "HCI",
+      "Hybrid Museological Spaces",
+      "Museums",
+      "More-than-Human Interaction"
+    ]
+  },
+  {
+    "slug": "semantic-anchoring-hmd-ar",
+    "authorRole": "first-author",
     "year": "2026",
     "title": "Semantic Anchoring in HMD-based Museum AR: A Mixed-Methods Study of UI Placement and Experience",
     "authors": ["Yu Liu", "Ulrike Spierling"],
@@ -20,10 +52,13 @@
     "type": "Conference Paper",
     "doi": "",
     "url": "",
+    "image": "",
     "abstract": "",
     "topics": ["HCI", "Spatial UI", "HMD-AR", "Museums"]
   },
   {
+    "slug": "parameterized-hmd-ar-design-patterns",
+    "authorRole": "first-author",
     "year": "2026",
     "title": "Parameterized Head-Mounted Augmented Reality Design Patterns for Cultural Heritage: An Empirical Study",
     "authors": ["Yu Liu", "Ulrike Spierling"],
@@ -31,29 +66,256 @@
     "type": "Conference Paper",
     "doi": "",
     "url": "",
+    "image": "",
     "abstract": "",
-    "topics": ["Design Patterns", "HMD-AR", "Cultural Heritage"]
+    "topics": ["HCI", "HMD-AR", "Design Patterns", "Cultural Heritage"]
   },
   {
+    "slug": "flow-narrative-spatial-immersion-museum-learning",
+    "authorRole": "first-author",
     "year": "2026",
     "title": "Comparing Flow, Narrative, and Spatial Immersion in an HMD-AR Serious Game for Museum Learning",
     "authors": ["Yu Liu", "Michael Lurz", "Ulrike Spierling"],
-    "venue": "ECGBL 2026",
+    "venue": "ECGBL 2026, accepted",
     "type": "Conference Paper",
     "doi": "",
     "url": "",
+    "image": "",
     "abstract": "",
-    "topics": ["Immersion", "Serious Games", "Museum Learning", "HMD-AR"]
+    "topics": ["HMD-AR", "Immersion", "Serious Games", "Museum Learning"]
   },
   {
+    "slug": "playful-ar-design-patterns-cultural-heritage",
+    "authorRole": "first-author",
     "year": "2025",
-    "title": "Design Patterns for Playful AR Experiences in Museums",
+    "title": "Design Patterns for Playful Augmented Reality: Enhancing Cultural Heritage Engagement with Game Mechanics",
     "authors": ["Yu Liu", "Manuel Feller", "Ulrike Spierling"],
-    "venue": "ACM Designing Interactive Systems Conference (DIS)",
+    "venue": "ACM Designing Interactive Systems Conference (DIS), 2025",
+    "type": "Conference Paper",
+    "doi": "10.1145/3715336.3735842",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": [
+      "Interaction Design",
+      "AR",
+      "Game Mechanics",
+      "Cultural Heritage"
+    ]
+  },
+  {
+    "slug": "playful-locative-interaction-museums",
+    "authorRole": "first-author",
+    "year": "2025",
+    "title": "Playful Locative Interaction in Museums and Exhibition with Immersive Augmented Reality",
+    "authors": ["Yu Liu", "Manuel Feller", "Ulrike Spierling"],
+    "venue": "JCSG 2024, LNCS 15259, Springer, 2025, pp. 1–16",
+    "type": "Book Chapter",
+    "doi": "10.1007/978-3-031-74138-8_18",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": ["AR", "Locative Interaction", "Playfulness", "Museums"]
+  },
+  {
+    "slug": "cross-device-ar-interaction-patterns",
+    "authorRole": "first-author",
+    "year": "2024",
+    "title": "Considerations for Cross-device Augmented Reality Interaction Patterns in the Field of Cultural Heritage Mediation",
+    "authors": ["Yu Liu", "Ulrike Spierling"],
+    "venue": "Gesellschaft für Informatik (GI), 2024",
+    "type": "Conference Contribution",
+    "doi": "",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": [
+      "Cross-device AR",
+      "Interaction Patterns",
+      "Cultural Heritage",
+      "HCI"
+    ]
+  },
+  {
+    "slug": "playful-interaction-patterns-hmd-ar-demo",
+    "authorRole": "first-author",
+    "year": "2024",
+    "title": "Demonstration of Playful Interaction Patterns for Head-mounted Device-based AR Experiences in Cultural Heritage",
+    "authors": ["Yu Liu"],
+    "venue": "Eurographics Workshop on Graphics and Cultural Heritage (GCH), 2024",
+    "type": "Demonstration",
+    "doi": "",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": [
+      "HMD-AR",
+      "Interaction Patterns",
+      "Playfulness",
+      "Cultural Heritage"
+    ]
+  },
+  {
+    "slug": "location-based-visual-presence-museums",
+    "authorRole": "co-author",
+    "year": "2024",
+    "title": "Creating Location-based Visual Presence Experiences for Museums with Immersive Technology",
+    "authors": ["Ulrike Spierling", "J. L. Bitter", "N. Kräuter", "Yu Liu"],
+    "venue": "Eurographics Workshop on Graphics and Cultural Heritage (GCH), 2024",
+    "type": "Conference Paper",
+    "doi": "10.2312/gch.20241271",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": [
+      "Immersive Technology",
+      "Museums",
+      "Location-based Experiences",
+      "Visual Presence"
+    ]
+  },
+  {
+    "slug": "interaction-challenges-first-time-hmd-ar-users",
+    "authorRole": "first-author",
+    "year": "2023",
+    "title": "Evaluating Interaction Challenges of Head-Mounted Device-Based Augmented Reality Applications for First-Time Users at Museums and Exhibitions",
+    "authors": ["Yu Liu", "J. L. Bitter", "Ulrike Spierling"],
+    "venue": "HCII 2023",
     "type": "Conference Paper",
     "doi": "",
     "url": "",
+    "image": "",
     "abstract": "",
-    "topics": ["Interaction Design", "Playfulness", "AR", "Museums"]
+    "topics": ["HMD-AR", "Usability", "First-Time Users", "Museums"]
+  },
+  {
+    "slug": "newbie-guides-omnidirectional-guidance",
+    "authorRole": "first-author",
+    "year": "2023",
+    "title": "Newbie Guides for Omnidirectional Guidance in Head-Mounted-Device-Based Museum Applications",
+    "authors": ["Yu Liu", "Y. Huang", "Ulrike Spierling"],
+    "venue": "HCII 2023",
+    "type": "Conference Paper",
+    "doi": "",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": ["HMD-AR", "Guidance", "Navigation", "Museums"]
+  },
+  {
+    "slug": "immersive-ar-game-based-learning-museums",
+    "authorRole": "co-author",
+    "year": "2023",
+    "title": "Chances and Limitations of Immersive Augmented Reality for Game-based Learning in Museums",
+    "authors": ["Ulrike Spierling", "J. L. Bitter", "Yu Liu", "T. Müller"],
+    "venue": "ECGBL 2023, pp. 643–650",
+    "type": "Conference Paper",
+    "doi": "10.34190/ecgbl.17.1.1851",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": ["Immersive AR", "Game-based Learning", "Museums", "Education"]
+  },
+  {
+    "slug": "hci-patterns-hmd-ar-exhibition-domain",
+    "authorRole": "first-author",
+    "year": "2022",
+    "title": "Human-Computer Interaction Patterns for Head-Mounted-Device-Based Augmented Reality in the Exhibition Domain",
+    "authors": ["Yu Liu"],
+    "venue": "Doctoral Consortium, ACM International Conference, 2022, pp. 21–26",
+    "type": "Doctoral Consortium",
+    "doi": "",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": ["HCI", "HMD-AR", "Interaction Patterns", "Exhibitions"]
+  },
+  {
+    "slug": "blue-butterfly-ar-museum-guide",
+    "authorRole": "co-author",
+    "year": "2022",
+    "title": "Follow the Blue Butterfly – An Immersive Augmented Reality Museum Guide",
+    "authors": [
+      "J. L. Bitter",
+      "Ralf Dörner",
+      "Yu Liu",
+      "L. Rau",
+      "Ulrike Spierling"
+    ],
+    "venue": "HCII, Springer, 2022, pp. 171–178",
+    "type": "Conference Paper",
+    "doi": "",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": ["Immersive AR", "Museum Guide", "Navigation", "HCI"]
+  },
+  {
+    "slug": "non-linear-everyday-ar-authoring",
+    "authorRole": "co-author",
+    "year": "2022",
+    "title": "Supporting the Creation of Non-linear Everyday AR Experiences in Exhibitions and Museums: An Authoring Process Based on Self-contained Building Blocks",
+    "authors": [
+      "L. Rau",
+      "Yu Liu",
+      "J. L. Bitter",
+      "Ulrike Spierling",
+      "Ralf Dörner"
+    ],
+    "venue": "Frontiers in Virtual Reality, 2022",
+    "type": "Journal Article",
+    "doi": "",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": ["AR Authoring", "Museums", "Exhibitions", "Interaction Design"]
+  },
+  {
+    "slug": "handheld-vs-head-mounted-ar-patterns",
+    "authorRole": "first-author",
+    "year": "2021",
+    "title": "Handheld vs. Head-Mounted AR Interaction Patterns for Museums or Guided Tours",
+    "authors": ["Yu Liu", "Ulrike Spierling", "L. Rau", "Ralf Dörner"],
+    "venue": "INTETAIN, Springer, 2021, pp. 229–242",
+    "type": "Conference Paper",
+    "doi": "",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": ["Handheld AR", "HMD-AR", "Interaction Patterns", "Museums"]
+  },
+  {
+    "slug": "nugget-based-concept-creating-ar",
+    "authorRole": "co-author",
+    "year": "2021",
+    "title": "A Nugget-Based Concept for Creating Augmented Reality",
+    "authors": ["L. Rau", "R. Horst", "Yu Liu", "Ralf Dörner"],
+    "venue": "IEEE ISMAR-Adjunct, 2021",
+    "type": "Conference Paper",
+    "doi": "10.1109/ISMAR-Adjunct54149.2021.00051",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": ["AR Authoring", "Augmented Reality", "Interaction Design"]
+  },
+  {
+    "slug": "tangible-object-mobile-ar",
+    "authorRole": "co-author",
+    "year": "2020",
+    "title": "A Tangible Object for General Purposes in Mobile Augmented Reality Applications",
+    "authors": [
+      "L. Rau",
+      "R. Horst",
+      "Yu Liu",
+      "Ralf Dörner",
+      "Ulrike Spierling"
+    ],
+    "venue": "Smart Systems for Better Living Environments, 2020",
+    "type": "Conference Contribution",
+    "doi": "",
+    "url": "",
+    "image": "",
+    "abstract": "",
+    "topics": ["Mobile AR", "Tangible Interaction", "Interaction Design"]
   }
 ]

@@ -12,6 +12,7 @@ interface Props {
 
 interface Publication {
   slug?: string;
+  authorRole: "first-author" | "co-author";
   year: string;
   title: string;
   authors: string[];
@@ -28,27 +29,40 @@ const { lang = "en" } = Astro.props;
 
 const publications = publicationsData as Publication[];
 
-const groupedPublications = publications.reduce<Record<string, Publication[]>>(
-  (groups, publication) => {
+const firstAuthorPublications = publications.filter(
+  (publication) => publication.authorRole === "first-author",
+);
+
+const coAuthoredPublications = publications.filter(
+  (publication) => publication.authorRole === "co-author",
+);
+
+function groupByYear(items: Publication[]) {
+  return items.reduce<Record<string, Publication[]>>((groups, publication) => {
     if (!groups[publication.year]) {
       groups[publication.year] = [];
     }
 
     groups[publication.year].push(publication);
-
     return groups;
-  },
-  {},
+  }, {});
+}
+
+const firstAuthorByYear = groupByYear(firstAuthorPublications);
+const coAuthorByYear = groupByYear(coAuthoredPublications);
+
+const firstAuthorYears = Object.keys(firstAuthorByYear).sort(
+  (a, b) => Number(b) - Number(a),
 );
 
-const years = Object.keys(groupedPublications).sort(
+const coAuthorYears = Object.keys(coAuthorByYear).sort(
   (a, b) => Number(b) - Number(a),
 );
 ---
 
 <BaseLayout
   title="Publications — Yu Liu"
-  description="Selected publications by Yu Liu in HCI, XR, interaction design, museum technology, and immersive experiences."
+  description="Publications by Yu Liu in HCI, XR, interaction design, museum technology, and immersive experiences."
   lang={lang}
 >
   <Header lang={lang} />
@@ -67,51 +81,131 @@ const years = Object.keys(groupedPublications).sort(
 
     <section class="publications-list">
       <div class="container">
-        {
-          years.map((year) => (
-            <div class="publication-year-group">
-              <div class="publication-year">
-                <p class="eyebrow">{year}</p>
+        <section class="publication-section">
+          <div class="publication-section-heading">
+            <p class="eyebrow">
+              First-Author Publications
+              <span>· {firstAuthorPublications.length}</span>
+            </p>
+          </div>
+
+          {
+            firstAuthorYears.map((year) => (
+              <div class="publication-year-group">
+                <div class="publication-year">
+                  <p class="eyebrow">{year}</p>
+                </div>
+
+                <div class="publication-items">
+                  {firstAuthorByYear[year].map((publication) => (
+                    <article class="publication-item">
+                      <p class="publication-meta">{publication.venue}</p>
+
+                      <h2>{publication.title}</h2>
+
+                      <p class="publication-authors">
+                        {publication.authors.join(", ")}
+                      </p>
+
+                      <div class="publication-links">
+                        {publication.slug && (
+                          <a
+                            href={`https://yuliu.design/ar-interaction-patterns/literature.html#${publication.slug}`}
+                          >
+                            Abstract ↗
+                          </a>
+                        )}
+
+                        {publication.doi && (
+                          <a
+                            href={`https://doi.org/${publication.doi}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            DOI ↗
+                          </a>
+                        )}
+
+                        {publication.url && (
+                          <a
+                            href={publication.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Publication ↗
+                          </a>
+                        )}
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
+            ))
+          }
+        </section>
 
-              <div class="publication-items">
-                {groupedPublications[year].map((publication) => (
-                  <article class="publication-item">
-                    <p class="publication-meta">
-                      {publication.venue} · {publication.year}
-                    </p>
+        <section class="publication-section coauthor-section">
+          <div class="publication-section-heading">
+            <p class="eyebrow">
+              Co-authored Publications
+              <span>· {coAuthoredPublications.length}</span>
+            </p>
+          </div>
 
-                    <h2>{publication.title}</h2>
+          {
+            coAuthorYears.map((year) => (
+              <div class="publication-year-group">
+                <div class="publication-year">
+                  <p class="eyebrow">{year}</p>
+                </div>
 
-                    <p class="publication-authors">
-                      {publication.authors.join(", ")}
-                    </p>
+                <div class="publication-items">
+                  {coAuthorByYear[year].map((publication) => (
+                    <article class="publication-item">
+                      <p class="publication-meta">{publication.venue}</p>
 
-                    <div class="publication-links">
-                      {publication.slug && (
-                        <a
-                          href={`https://yuliu.design/ar-interaction-patterns/literature.html#${publication.slug}`}
-                        >
-                          Abstract
-                        </a>
-                      )}
+                      <h2>{publication.title}</h2>
 
-                      {publication.doi && (
-                        <a
-                          href={`https://doi.org/${publication.doi}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          DOI
-                        </a>
-                      )}
-                    </div>
-                  </article>
-                ))}
+                      <p class="publication-authors">
+                        {publication.authors.join(", ")}
+                      </p>
+
+                      <div class="publication-links">
+                        {publication.slug && (
+                          <a
+                            href={`https://yuliu.design/ar-interaction-patterns/literature.html#${publication.slug}`}
+                          >
+                            Abstract ↗
+                          </a>
+                        )}
+
+                        {publication.doi && (
+                          <a
+                            href={`https://doi.org/${publication.doi}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            DOI ↗
+                          </a>
+                        )}
+
+                        {publication.url && (
+                          <a
+                            href={publication.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Publication ↗
+                          </a>
+                        )}
+                      </div>
+                    </article>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))
-        }
+            ))
+          }
+        </section>
       </div>
     </section>
   </main>
@@ -142,6 +236,18 @@ const years = Object.keys(groupedPublications).sort(
     padding-bottom: var(--section-gap);
   }
 
+  .publication-section-heading {
+    padding: 0 0 1.5rem;
+  }
+
+  .publication-section-heading .eyebrow {
+    margin: 0;
+  }
+
+  .publication-section-heading span {
+    color: var(--muted);
+  }
+
   .publication-year-group {
     display: grid;
     grid-template-columns: minmax(7rem, 0.25fr) minmax(0, 1fr);
@@ -155,11 +261,11 @@ const years = Object.keys(groupedPublications).sort(
   }
 
   .publication-item {
-    padding: 0 0 3rem;
+    padding: 0 0 2rem;
   }
 
   .publication-item + .publication-item {
-    padding-top: 3rem;
+    padding-top: 2rem;
     border-top: 1px solid var(--line);
   }
 
@@ -176,6 +282,7 @@ const years = Object.keys(groupedPublications).sort(
     margin: 0;
     color: var(--muted);
     font-size: var(--text-xs);
+    line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 0.08em;
   }
@@ -184,10 +291,12 @@ const years = Object.keys(groupedPublications).sort(
     margin: 0;
     color: var(--muted);
     font-size: 0.95rem;
+    line-height: 1.5;
   }
 
   .publication-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-top: 0.85rem;
   }
@@ -196,37 +305,19 @@ const years = Object.keys(groupedPublications).sort(
     color: var(--text);
     font-size: 0.9rem;
     text-decoration: none;
-  }
-
-  .publication-item {
-    padding: 0 0 2rem;
-  }
-
-  .publication-item + .publication-item {
-    padding-top: 2rem;
-  }
-
-  .publication-authors,
-  .publication-venue {
-    margin: 0 0 0.5rem;
-    color: var(--muted);
-    line-height: 1.5;
-  }
-
-  .publication-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1.25rem;
-  }
-
-  .publication-links a {
-    color: var(--text);
-    text-decoration: none;
+    transition: opacity 0.2s ease;
   }
 
   .publication-links a:hover {
-    opacity: 0.65;
+    opacity: 0.6;
+  }
+
+  .coauthor-section {
+    margin-top: clamp(6rem, 12vw, 12rem);
+  }
+
+  .coauthor-section .publication-item h2 {
+    font-size: clamp(1.2rem, 1.7vw, 1.7rem);
   }
 
   @media (max-width: 768px) {
@@ -237,6 +328,10 @@ const years = Object.keys(groupedPublications).sort(
     .publication-year-group {
       grid-template-columns: 1fr;
       gap: 1.5rem;
+    }
+
+    .coauthor-section {
+      margin-top: 6rem;
     }
   }
 </style>
