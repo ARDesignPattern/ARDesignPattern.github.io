@@ -1,0 +1,11 @@
+---
+import PublicationsPage from "../../components/pages/PublicationsPage.astro";
+
+export function getStaticPaths() {
+  return [{ params: { lang: "de" } }, { params: { lang: "zh" } }];
+}
+
+const lang = Astro.params.lang as "de" | "zh";
+---
+
+<PublicationsPage lang={lang} />

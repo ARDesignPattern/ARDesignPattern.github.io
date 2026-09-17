@@ -1,0 +1,206 @@
+---
+import Header from "../Header.astro";
+import Footer from "../Footer.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import publicationsData from "../../data/publications.json";
+import { type Locale } from "../../i18n/ui";
+import "../../styles/global.css";
+
+interface Props {
+  lang?: Locale;
+}
+
+interface Publication {
+  year: string;
+  title: string;
+  authors: string[];
+  venue: string;
+  type: string;
+  doi?: string;
+  url?: string;
+  abstract?: string;
+  topics?: string[];
+}
+
+const { lang = "en" } = Astro.props;
+
+const publications = publicationsData as Publication[];
+
+const groupedPublications = publications.reduce<Record<string, Publication[]>>(
+  (groups, publication) => {
+    if (!groups[publication.year]) {
+      groups[publication.year] = [];
+    }
+
+    groups[publication.year].push(publication);
+
+    return groups;
+  },
+  {},
+);
+
+const years = Object.keys(groupedPublications).sort(
+  (a, b) => Number(b) - Number(a),
+);
+---
+
+<BaseLayout
+  title="Publications — Yu Liu"
+  description="Selected publications by Yu Liu in HCI, XR, interaction design, museum technology, and immersive experiences."
+  lang={lang}
+>
+  <Header lang={lang} />
+
+  <main class="publications-page">
+    <section class="publications-hero">
+      <div class="container">
+        <p class="eyebrow">Publications</p>
+
+        <h1 class="publications-title">
+          Selected research in HCI, XR, interaction design, and immersive museum
+          experiences.
+        </h1>
+      </div>
+    </section>
+
+    <section class="publications-list">
+      <div class="container">
+        {
+          years.map((year) => (
+            <div class="publication-year-group">
+              <div class="publication-year">
+                <p class="eyebrow">{year}</p>
+              </div>
+
+              <div class="publication-items">
+                {groupedPublications[year].map((publication) => (
+                  <article class="publication-item">
+                    <h2>{publication.title}</h2>
+
+                    <p class="publication-authors">
+                      {publication.authors.join(", ")}
+                    </p>
+
+                    <p class="publication-venue">{publication.venue}</p>
+
+                    <div class="publication-links">
+                      {publication.doi && (
+                        <a
+                          href={`https://doi.org/${publication.doi}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          DOI ↗
+                        </a>
+                      )}
+
+                      {publication.url && (
+                        <a
+                          href={publication.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View publication ↗
+                        </a>
+                      )}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .publications-page {
+    min-height: 100vh;
+    padding-top: 7rem;
+  }
+
+  .publications-hero {
+    padding-block: clamp(4rem, 8vw, 9rem);
+  }
+
+  .publications-title {
+    max-width: 16ch;
+    margin: 1.5rem 0 0;
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+  }
+
+  .publications-list {
+    padding-bottom: var(--section-gap);
+  }
+
+  .publication-year-group {
+    display: grid;
+    grid-template-columns: minmax(7rem, 0.25fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    padding-block: 3rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .publication-items {
+    display: grid;
+  }
+
+  .publication-item {
+    padding: 0 0 3rem;
+  }
+
+  .publication-item + .publication-item {
+    padding-top: 3rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .publication-item h2 {
+    max-width: 34ch;
+    margin: 0 0 1rem;
+    font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 500;
+  }
+
+  .publication-authors,
+  .publication-venue {
+    margin: 0 0 0.5rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .publication-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .publication-links a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .publication-links a:hover {
+    opacity: 0.65;
+  }
+
+  @media (max-width: 768px) {
+    .publications-page {
+      padding-top: 5rem;
+    }
+
+    .publication-year-group {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

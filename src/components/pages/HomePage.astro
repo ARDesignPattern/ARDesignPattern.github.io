@@ -174,14 +174,25 @@ const moreProjects = projects
       <div class="container">
         <div class="section-header">
           <p class="eyebrow">Research</p>
-          <a
-            class="link-arrow research-link"
-            href="https://ardesignpattern.github.io/ar-interaction-patterns/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t.home.viewResearch}
-          </a>
+          <div class="research-links">
+            <a
+              class="link-arrow research-link"
+              href="https://ardesignpattern.github.io/ar-interaction-patterns/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.home.viewResearch}
+            </a>
+
+            <span class="research-separator">|</span>
+
+            <a
+              class="link-arrow research-link"
+              href={localizePath("/publications/", lang)}
+            >
+              Publications
+            </a>
+          </div>
         </div>
 
         <div class="rule"></div>
@@ -257,6 +268,18 @@ const moreProjects = projects
 </BaseLayout>
 
 <style>
+  .research-links {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+  }
+
+  .research-separator {
+    color: var(--muted);
+    opacity: 0.5;
+  }
+
   /* =========================
      HERO — DESKTOP DEFAULT
      ========================= */
