@@ -22,7 +22,7 @@ subtitle: "A spatial XR experience designed for intuitive walk-up use in a museu
 tags:
   - "Museum XR"
   - "Spatial Interaction"
-  - "Quest 3"
+  - "HoloLens 2"
   - "Field Deployment"
 
 gallery:
@@ -117,7 +117,7 @@ credits:
       url: "https://presentxr.de/"
 
     - name: "Hochschule RheinMain"
-      logo: "/images/logos/Logo_HSRM_2025.svg"
+      logo: "/images/logos/Logo_HSRM_2025_white.svg"
       url: "https://www.hs-rm.de/"
 
     - name: "Senckenberg Naturmuseum Frankfurt"
