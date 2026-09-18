@@ -628,6 +628,16 @@ const researchItems = [
   }
 
   @media (max-width: 768px) {
+    .hero,
+    .hero-inner,
+    .hero-title {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .hero-title {
+      overflow-wrap: break-word;
+    }
     .research-grid {
       grid-template-columns: 1fr;
       gap: 3rem;

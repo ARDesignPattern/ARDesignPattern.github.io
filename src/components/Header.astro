@@ -155,12 +155,14 @@ const t = ui[lang];
 
   .header-inner {
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     padding-inline: var(--page-padding);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1rem;
   }
 
   .brand,
@@ -226,6 +228,8 @@ const t = ui[lang];
     color: var(--text);
     font: inherit;
     cursor: pointer;
+    flex: 0 0 auto;
+    margin-left: auto;
   }
 
   .menu-label {
