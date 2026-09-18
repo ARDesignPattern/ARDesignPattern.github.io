@@ -239,10 +239,14 @@ const { items } = Astro.props;
 
     cards.forEach((card) => {
       card.addEventListener("click", () => {
+        if (!desktopQuery.matches) return;
+
         selectCard(card);
       });
 
       card.addEventListener("keydown", (event) => {
+        if (!desktopQuery.matches) return;
+
         if (!(event instanceof KeyboardEvent)) {
           return;
         }
