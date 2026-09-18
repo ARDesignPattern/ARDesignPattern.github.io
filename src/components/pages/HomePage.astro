@@ -17,13 +17,69 @@ const t = ui[lang];
 
 const projects = await getCollection("projects");
 
-const featuredProjects = projects
-  .filter((project) => project.data.featured)
-  .sort((a, b) => a.data.order - b.data.order);
+/* =========================
+   WORK
+   ========================= */
 
-const moreProjects = projects
-  .filter((project) => !project.data.featured)
-  .sort((a, b) => a.data.order - b.data.order);
+const workProjectIds = [
+  "whale-exhibition",
+  "deinonychus-exhibition",
+  "coral-reef-exhibition",
+  "triceratops-exhibition",
+  "monk-seal-exhibition",
+];
+
+const workProjects = projects
+  .filter((project) => workProjectIds.includes(project.id))
+  .sort((a, b) => workProjectIds.indexOf(a.id) - workProjectIds.indexOf(b.id));
+
+/* =========================
+   MORE WORK
+   ========================= */
+
+const moreWorkProjectIds = [
+  "zeiss-smart-glasses",
+  "bosch-automotive-hmi",
+  "music-tribe-uiux",
+];
+
+const moreWorkProjects = projects
+  .filter((project) => moreWorkProjectIds.includes(project.id))
+  .sort(
+    (a, b) =>
+      moreWorkProjectIds.indexOf(a.id) - moreWorkProjectIds.indexOf(b.id),
+  );
+
+/* =========================
+   RESEARCH
+   ========================= */
+
+const researchItems = [
+  {
+    title: "Walk-up XR for Real-World Environments",
+    href: localizePath("/projects/museum-ar/", lang),
+  },
+  {
+    title: "Game-Mechanic-Based Interaction Design",
+    href: localizePath("/projects/game-mechanic-interaction/", lang),
+  },
+  {
+    title: "Evaluating HMD Interaction in Museums",
+    href: localizePath("/projects/xr-evaluation-museums/", lang),
+  },
+  {
+    title: "Parameterized Design Patterns for Museum XR",
+    href: localizePath("/projects/parameterized-design-patterns/", lang),
+  },
+  {
+    title: "Spatial UI Anchoring in Museum AR",
+    href: localizePath("/projects/spatial-ui-anchoring/", lang),
+  },
+  {
+    title: "Immersion in Museum XR",
+    href: localizePath("/projects/immersion-in-museum-xr/", lang),
+  },
+];
 ---
 
 <BaseLayout
@@ -71,9 +127,10 @@ const moreProjects = projects
     <section class="section work scroll-reveal" id="work" data-reveal>
       <div class="container">
         <div class="section-header">
-          <p class="eyebrow">{t.home.selectedWork}</p>
+          <p class="eyebrow">Work</p>
+
           <p class="section-index">
-            01 — {String(featuredProjects.length).padStart(2, "0")}
+            01 — {String(workProjects.length).padStart(2, "0")}
           </p>
         </div>
 
@@ -81,7 +138,7 @@ const moreProjects = projects
 
         <div class="project-list">
           {
-            featuredProjects.map((project, index) => (
+            workProjects.map((project, index) => (
               <a
                 class="project-row"
                 href={localizePath(`/projects/${project.id}/`, lang)}
@@ -113,7 +170,7 @@ const moreProjects = projects
           <p class="eyebrow">More Work</p>
 
           <p class="section-index">
-            01 — {String(moreProjects.length).padStart(2, "0")}
+            01 — {String(moreWorkProjects.length).padStart(2, "0")}
           </p>
         </div>
 
@@ -121,7 +178,7 @@ const moreProjects = projects
 
         <div class="project-list more-project-list">
           {
-            moreProjects.map((project, index) => (
+            moreWorkProjects.map((project, index) => (
               <a
                 class="project-row"
                 href={localizePath(`/projects/${project.id}/`, lang)}
@@ -146,6 +203,53 @@ const moreProjects = projects
       </div>
     </section>
 
+    <!-- RESEARCH -->
+    <section class="section research scroll-reveal" id="research" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Research</p>
+
+          <div class="research-links">
+            <a
+              class="link-arrow research-link"
+              href="https://ardesignpattern.github.io/ar-interaction-patterns/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.home.viewResearch}
+            </a>
+          </div>
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="research-grid">
+          <div class="research-intro">
+            <p class="research-lead">
+              {t.home.researchLead}
+            </p>
+
+            <div class="research-tags">
+              {t.home.researchTags.map((tag) => <span>{tag}</span>)}
+            </div>
+          </div>
+
+          <div class="research-meta">
+            {
+              researchItems.map((item) => (
+                <a class="research-item" href={item.href}>
+                  <span>{item.title}</span>
+                  <span class="research-item-arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ABOUT -->
     <section class="section about scroll-reveal" id="about" data-reveal>
       <div class="container about-grid">
@@ -165,46 +269,6 @@ const moreProjects = projects
           <a class="link-arrow about-link" href={localizePath("/about/", lang)}>
             {t.home.moreAbout}
           </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESEARCH -->
-    <section class="section research scroll-reveal" id="research" data-reveal>
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Research</p>
-          <div class="research-links">
-            <a
-              class="link-arrow research-link"
-              href="https://ardesignpattern.github.io/ar-interaction-patterns/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t.home.viewResearch}
-            </a>
-
-            <span class="research-separator">|</span>
-
-            <a
-              class="link-arrow research-link"
-              href={localizePath("/publications/", lang)}
-            >
-              Publications
-            </a>
-          </div>
-        </div>
-
-        <div class="rule"></div>
-
-        <div class="research-grid">
-          <p class="research-lead">
-            {t.home.researchLead}
-          </p>
-
-          <div class="research-meta">
-            {t.home.researchTags.map((tag) => <p>{tag}</p>)}
-          </div>
         </div>
       </div>
     </section>
@@ -422,6 +486,14 @@ const moreProjects = projects
     transform: translate(0.25rem, -0.25rem);
   }
 
+  .more-work {
+    background: #222222;
+  }
+  .more-work .rule,
+  .more-work .project-row {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
   /* =========================
      ABOUT
      ========================= */
@@ -429,6 +501,8 @@ const moreProjects = projects
   .about {
     background: var(--text);
     color: var(--bg);
+    padding-top: clamp(5rem, 9vw, 9rem);
+    padding-bottom: clamp(5rem, 9vw, 9rem);
   }
 
   .about .eyebrow {
@@ -439,6 +513,7 @@ const moreProjects = projects
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: clamp(3rem, 8vw, 10rem);
+    padding-top: clamp(2rem, 4vw, 4rem);
   }
 
   .about-statement {
@@ -462,14 +537,24 @@ const moreProjects = projects
   }
 
   /* =========================
-     RESEARCH
-     ========================= */
+   RESEARCH
+   ========================= */
+
+  .research {
+    padding-bottom: clamp(6rem, 10vw, 10rem);
+  }
 
   .research-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: clamp(3rem, 8vw, 10rem);
     padding-top: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  .research-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .research-lead {
@@ -480,17 +565,81 @@ const moreProjects = projects
     letter-spacing: -0.04em;
   }
 
+  .research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.8rem;
+    max-width: 40rem;
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+
+  .research-tags span {
+    color: var(--muted);
+    font-size: var(--text-xs);
+    line-height: 1.5;
+  }
+
+  .research-tags span:not(:last-child)::after {
+    content: "·";
+    margin-left: 1rem;
+    color: var(--muted);
+    opacity: 0.6;
+  }
+
   .research-meta {
     display: grid;
     align-content: start;
   }
 
-  .research-meta p {
+  .research-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     margin: 0;
     padding-block: 1rem;
     border-bottom: 1px solid var(--line);
-    color: var(--muted);
+    color: color-mix(in srgb, var(--text) 72%, transparent);
     font-size: var(--text-sm);
+    line-height: 1.45;
+    text-decoration: none;
+    transition:
+      color var(--transition-fast),
+      padding-left var(--transition-fast);
+  }
+
+  .research-item:hover {
+    color: var(--text);
+    padding-left: 0.35rem;
+  }
+
+  .research-item-arrow {
+    flex-shrink: 0;
+    opacity: 0;
+    transform: translateX(-0.3rem);
+    transition:
+      opacity var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .research-item:hover .research-item-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  @media (max-width: 768px) {
+    .research-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .research-lead {
+      max-width: 18ch;
+    }
+
+    .research-tags {
+      max-width: none;
+    }
   }
 
   /* =========================

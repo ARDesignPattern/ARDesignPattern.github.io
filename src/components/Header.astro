@@ -18,73 +18,144 @@ const t = ui[lang];
       {site.name}
     </a>
 
-    <div class="header-right">
+    <div class="header-right desktop-nav">
       <nav class="nav">
         <a class="nav-link" href={localizePath("/#work", lang)}>
           {t.nav.work}
-        </a>
-
-        <a class="nav-link" href={localizePath("/about/", lang)}>
-          {t.nav.about}
         </a>
 
         <a class="nav-link" href={localizePath("/#research", lang)}>
           {t.nav.research}
         </a>
 
-        <a class="nav-link" href={localizePath("/#contact", lang)}>
-          {t.nav.contact}
+        <a class="nav-link" href={localizePath("/publications/", lang)}>
+          {t.nav.publications}
+        </a>
+
+        <a class="nav-link" href={localizePath("/about/", lang)}>
+          {t.nav.about}
         </a>
       </nav>
 
       <LanguageSwitcher lang={lang} />
     </div>
+
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="menu-label">Menu</span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <nav class="mobile-nav">
+        <a class="mobile-nav-link" href={localizePath("/#work", lang)}>
+          {t.nav.work}
+        </a>
+
+        <a class="mobile-nav-link" href={localizePath("/#research", lang)}>
+          {t.nav.research}
+        </a>
+
+        <a class="mobile-nav-link" href={localizePath("/publications/", lang)}>
+          {t.nav.publications}
+        </a>
+
+        <a class="mobile-nav-link" href={localizePath("/about/", lang)}>
+          {t.nav.about}
+        </a>
+      </nav>
+
+      <div class="mobile-language">
+        <LanguageSwitcher lang={lang} />
+      </div>
+    </div>
   </div>
 </header>
 
-<style>
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: clamp(1rem, 2vw, 2rem);
-    pointer-events: auto;
+<script>
+  const header = document.getElementById("site-header");
+  const toggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  function closeMenu() {
+    if (!header || !toggle) return;
+
+    header.classList.remove("menu-open");
+    toggle.setAttribute("aria-expanded", "false");
+
+    const label = toggle.querySelector(".menu-label");
+    if (label) label.textContent = "Menu";
   }
 
+  function openMenu() {
+    if (!header || !toggle) return;
+
+    header.classList.add("menu-open");
+    toggle.setAttribute("aria-expanded", "true");
+
+    const label = toggle.querySelector(".menu-label");
+    if (label) label.textContent = "Close";
+  }
+
+  toggle?.addEventListener("click", () => {
+    if (!header) return;
+
+    const isOpen = header.classList.contains("menu-open");
+
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+</script>
+
+<style>
   .site-header {
     position: fixed;
     inset: 0 0 auto 0;
     z-index: 50;
-
     padding-top: 1.25rem;
     padding-bottom: 1.1rem;
-
     background: rgba(10, 10, 10, 0);
     border-bottom: 1px solid transparent;
-
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-
     transition:
       background 350ms ease,
       border-color 350ms ease,
       backdrop-filter 350ms ease,
       -webkit-backdrop-filter 350ms ease;
-
     pointer-events: none;
   }
 
-  .site-header.is-scrolled {
-    background: rgba(27, 27, 27, 0.5);
-    border-bottom-color: rgba(201, 201, 201, 0.8);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  .site-header.is-scrolled,
+  .site-header.menu-open {
+    background: rgba(27, 27, 27, 0.82);
+    border-bottom-color: rgba(201, 201, 201, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
 
   .header-inner {
     width: 100%;
     padding-inline: var(--page-padding);
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -92,7 +163,9 @@ const t = ui[lang];
   }
 
   .brand,
-  .nav {
+  .header-right,
+  .menu-toggle,
+  .mobile-menu {
     pointer-events: auto;
   }
 
@@ -100,6 +173,12 @@ const t = ui[lang];
     font-size: var(--text-sm);
     font-weight: 600;
     letter-spacing: -0.02em;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2vw, 2rem);
   }
 
   .nav {
@@ -112,25 +191,19 @@ const t = ui[lang];
     position: relative;
     font-size: var(--text-sm);
     color: var(--muted);
-
     transition: color var(--transition-fast);
   }
 
   .nav-link::after {
     content: "";
-
     position: absolute;
     left: 0;
     right: 0;
     bottom: -0.25rem;
-
     height: 1px;
-
     background: currentColor;
-
     transform: scaleX(0);
     transform-origin: right;
-
     transition: transform var(--transition-fast);
   }
 
@@ -143,25 +216,86 @@ const t = ui[lang];
     transform-origin: left;
   }
 
+  .menu-toggle {
+    display: none;
+    appearance: none;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .menu-label {
+    font-size: var(--text-sm);
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
   @media (max-width: 768px) {
     .site-header {
       padding-top: 1rem;
       padding-bottom: 0.9rem;
     }
 
-    .nav {
-      gap: 0.9rem;
-    }
-
-    .nav-link {
-      font-size: 0.78rem;
-    }
-  }
-
-  @media (max-width: 560px) {
-    .nav-link:nth-child(2),
-    .nav-link:nth-child(3) {
+    .desktop-nav {
       display: none;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    .mobile-menu {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transition:
+        grid-template-rows 300ms ease,
+        opacity 220ms ease;
+    }
+
+    .mobile-menu-inner {
+      overflow: hidden;
+      padding-inline: var(--page-padding);
+    }
+
+    .site-header.menu-open .mobile-menu {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+
+    .site-header.menu-open .mobile-menu-inner {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .mobile-nav {
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .mobile-nav-link {
+      display: block;
+      padding-block: 0.35rem;
+      color: var(--text);
+      font-size: clamp(2rem, 9vw, 3.4rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      text-decoration: none;
+    }
+
+    .mobile-nav-link:hover {
+      color: var(--muted);
+    }
+
+    .mobile-language {
+      margin-top: 2.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
     }
   }
 </style>

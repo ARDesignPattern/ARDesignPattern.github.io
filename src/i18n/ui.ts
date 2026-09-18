@@ -2,9 +2,9 @@ export const ui = {
   en: {
     nav: {
       work: "Work",
-      about: "About",
       research: "Research",
-      contact: "Contact",
+      publications: "Publications",
+      about: "About",
     },
 
     home: {
@@ -68,7 +68,7 @@ export const ui = {
       approachBody:
         "My process combines design exploration, prototyping, empirical evaluation, and iterative refinement, with a strong focus on real-world interaction contexts.",
 
-      contactTitle: "Contact",
+      contactTitle: "Get in Touch",
 
       contactLead:
         "Interested in collaboration, research, design, or XR projects?",
@@ -84,9 +84,9 @@ export const ui = {
   de: {
     nav: {
       work: "Projekte",
-      about: "Über mich",
       research: "Forschung",
-      contact: "Kontakt",
+      publications: "Publikationen",
+      about: "Über mich",
     },
 
     home: {
@@ -166,10 +166,10 @@ export const ui = {
 
   zh: {
     nav: {
-      work: "项目",
-      about: "关于我",
+      work: "作品",
       research: "研究",
-      contact: "联系",
+      publications: "发表成果",
+      about: "关于",
     },
 
     home: {
@@ -197,7 +197,7 @@ export const ui = {
     },
 
     about: {
-      eyebrow: "关于我",
+      eyebrow: "关于",
 
       title: "在交互、空间与新兴技术之间进行设计。",
 
@@ -219,7 +219,7 @@ export const ui = {
       approachBody:
         "我的工作流程结合设计探索、原型开发、实证评估与迭代优化，并特别关注真实使用场景中的交互体验。",
 
-      contactTitle: "联系",
+      contactTitle: "联系我",
 
       contactLead: "如果你对合作、研究、设计或 XR 项目感兴趣，欢迎联系我。",
     },
