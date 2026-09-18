@@ -1,0 +1,180 @@
+---
+interface VideoData {
+  youtube?: string;
+  bilibili?: string;
+}
+
+interface Props {
+  video: VideoData;
+}
+
+const { video } = Astro.props;
+
+const hasYoutube = Boolean(video.youtube);
+const hasBilibili = Boolean(video.bilibili);
+
+const defaultPlatform = hasYoutube ? "youtube" : "bilibili";
+---
+
+<div
+  class="project-video"
+  data-project-video
+  data-default-platform={defaultPlatform}
+>
+  {
+    hasYoutube && hasBilibili && (
+      <div class="project-video-switcher">
+        <button
+          type="button"
+          class="project-video-tab is-active"
+          data-video-tab="youtube"
+          aria-pressed="true"
+        >
+          YouTube
+        </button>
+
+        <button
+          type="button"
+          class="project-video-tab"
+          data-video-tab="bilibili"
+          aria-pressed="false"
+        >
+          Bilibili
+        </button>
+      </div>
+    )
+  }
+
+  <div class="project-video-frame">
+    {
+      hasYoutube && (
+        <iframe
+          class:list={["project-video-embed", { "is-hidden": hasYoutube }]}
+          data-video-frame="bilibili"
+          src={video.bilibili}
+          title="Project video on Bilibili"
+          loading="lazy"
+          allowfullscreen
+        />
+      )
+    }
+  </div>
+</div>
+
+<script>
+  const videoBlocks = document.querySelectorAll("[data-project-video]");
+
+  videoBlocks.forEach((block) => {
+    const tabs = block.querySelectorAll("[data-video-tab]");
+    const frames = block.querySelectorAll("[data-video-frame]");
+
+    if (tabs.length <= 1) return;
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        if (!(tab instanceof HTMLButtonElement)) return;
+
+        const platform = tab.dataset.videoTab;
+
+        tabs.forEach((otherTab) => {
+          if (!(otherTab instanceof HTMLButtonElement)) return;
+
+          const active = otherTab.dataset.videoTab === platform;
+
+          otherTab.classList.toggle("is-active", active);
+          otherTab.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+
+        frames.forEach((frame) => {
+          if (!(frame instanceof HTMLElement)) return;
+
+          const active = frame.dataset.videoFrame === platform;
+
+          frame.classList.toggle("is-hidden", !active);
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .project-video {
+    width: min(78%, 1180px);
+    margin-inline: auto;
+  }
+
+  .project-video-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 0.35rem;
+
+    margin-bottom: 1.1rem;
+  }
+
+  .project-video-tab {
+    appearance: none;
+    border: 0;
+    background: transparent;
+
+    padding: 0.45rem 0.7rem;
+
+    color: rgba(255, 255, 255, 0.38);
+    font: inherit;
+    font-size: 0.78rem;
+
+    cursor: pointer;
+
+    transition:
+      color 180ms ease,
+      background-color 180ms ease;
+  }
+
+  .project-video-tab:hover {
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .project-video-tab.is-active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .project-video-frame {
+    position: relative;
+
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+
+    width: 100%;
+
+    border-radius: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: #050505;
+  }
+
+  .project-video-embed {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+  }
+
+  .project-video-embed.is-hidden {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .project-video {
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-video-tab {
+      transition: none;
+    }
+  }
+</style>

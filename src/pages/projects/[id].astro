@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import ProjectPage from "../../components/pages/ProjectPage.astro";
+import WorkProjectPage from "../../components/pages/WorkProjectPage.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -12,6 +13,14 @@ export async function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+
+const isWorkProject = project.data.template === "work";
 ---
 
-<ProjectPage project={project} />
+{
+  isWorkProject ? (
+    <WorkProjectPage project={project} />
+  ) : (
+    <ProjectPage project={project} />
+  )
+}
