@@ -73,6 +73,26 @@ const projects = defineCollection({
     focus: z.string().optional(),
     outcome: z.string().optional(),
 
+    credits: z
+      .object({
+        role: z.array(z.string()).optional(),
+
+        team: z.array(z.string()).optional(),
+
+        advisors: z.array(z.string()).optional(),
+
+        partners: z
+          .array(
+            z.object({
+              name: z.string(),
+              logo: z.string().optional(),
+              url: z.string().optional(),
+            }),
+          )
+          .optional(),
+      })
+      .optional(),
+
     /* =========================
        PROJECT NAVIGATION
        ========================= */

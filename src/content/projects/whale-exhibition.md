@@ -35,7 +35,7 @@ gallery:
     alt: "Visitor following spatial guidance in the whale exhibition"
 
   - image: "/images/projects/whale-exhibition/02.jpg"
-    label: "AR Labelling"
+    label: "Virtual Avatar Guiding"
     alt: "AR labels positioned around the whale exhibit"
 
   - image: "/images/projects/whale-exhibition/03.png"
@@ -43,11 +43,11 @@ gallery:
     alt: "Floor-based trigger interface in the whale exhibition"
 
   - image: "/images/projects/whale-exhibition/04.jpg"
-    label: "Field Deployment"
+    label: "AR Labelling"
     alt: "HMD-based AR deployed in the museum exhibition"
 
   - image: "/images/projects/whale-exhibition/05.jpg"
-    label: "Hand Interaction"
+    label: "Spatial anchored interface"
     alt: "Hand-based interaction with spatial AR content"
 
   - image: "/images/projects/whale-exhibition/06.png"
@@ -55,15 +55,15 @@ gallery:
     alt: "Visitor using a hand menu in the AR experience"
 
   - image: "/images/projects/whale-exhibition/07.jpg"
-    label: "Interactive Content"
+    label: "Spatial Indicator"
     alt: "Interactive AR content around the whale skeleton"
 
   - image: "/images/projects/whale-exhibition/08.png"
-    label: "Spatial Indicator"
+    label: "MR experience"
     alt: "Spatial indicator placed in the museum environment"
 
   - image: "/images/projects/whale-exhibition/09.png"
-    label: "Sequential Explanation"
+    label: "AR Labelling"
     alt: "Visitor viewing explanatory AR content"
 
   - image: "/images/projects/whale-exhibition/10.jpg"
@@ -71,23 +71,19 @@ gallery:
     alt: "Digital anatomical information aligned with the whale exhibit"
 
   - image: "/images/projects/whale-exhibition/11.png"
-    label: "Physical Anchoring"
+    label: "Spatial Mapping for AR labels"
     alt: "AR labels anchored to physical bones"
 
   - image: "/images/projects/whale-exhibition/12.png"
-    label: "Anatomy Overview"
+    label: "AR labelling with Orca 3D overlay"
     alt: "Anatomical overview of the whale in AR"
 
   - image: "/images/projects/whale-exhibition/13.png"
     label: "Organ Explanation"
     alt: "AR explanation of internal whale anatomy"
 
-  - image: "/images/projects/whale-exhibition/14.png"
-    label: "Guided Interaction"
-    alt: "Guided AR interaction sequence"
-
 video:
-  youtube: ""
+  youtube: "https://www.youtube.com/embed/TgqAZzYDPkQ"
   bilibili: ""
 
 context: "Natural History Museum · Exhibition"
@@ -96,11 +92,41 @@ platform: "Meta Quest 3"
 
 interaction: "Hand Tracking · Spatial UI · Exhibit Anchoring"
 
-role: "Interaction Design · XR Prototyping · Field Testing"
-
 focus: "Walk-up Use · Learning · Engagement"
 
 outcome: "Deployed and evaluated with museum visitors in a real exhibition environment."
+
+credits:
+  role:
+    - "Interaction Design"
+    - "XR Prototyping"
+    - "Field Testing"
+
+  team:
+    - "Yu Liu"
+    - "Jessica Bitte"
+    - "Linda Rau"
+
+  advisors:
+    - "Ulrike Spierling"
+    - "Ralf Dörner"
+
+  partners:
+    - name: "presentXR"
+      logo: "/images/logos/presentXR-logo.svg"
+      url: "https://presentxr.de/"
+
+    - name: "Hochschule RheinMain"
+      logo: "/images/logos/Logo_HSRM_2025.svg"
+      url: "https://www.hs-rm.de/"
+
+    - name: "Senckenberg Naturmuseum Frankfurt"
+      logo: "/images/logos/senckenberg-logo-white.svg"
+      url: "https://museumfrankfurt.senckenberg.de/"
+
+    - name: "satis&fy"
+      logo: "/images/logos/satis-fy-logo-white.svg"
+      url: "https://satis-fy.com/startseite"
 
 previous: "monk-seal-exhibition"
 next: "deinonychus-exhibition"

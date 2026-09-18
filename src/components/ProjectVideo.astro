@@ -49,6 +49,20 @@ const defaultPlatform = hasYoutube ? "youtube" : "bilibili";
     {
       hasYoutube && (
         <iframe
+          class="project-video-embed"
+          data-video-frame="youtube"
+          src={video.youtube}
+          title="Project video on YouTube"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        />
+      )
+    }
+
+    {
+      hasBilibili && (
+        <iframe
           class:list={["project-video-embed", { "is-hidden": hasYoutube }]}
           data-video-frame="bilibili"
           src={video.bilibili}
@@ -66,27 +80,35 @@ const defaultPlatform = hasYoutube ? "youtube" : "bilibili";
 
   videoBlocks.forEach((block) => {
     const tabs = block.querySelectorAll("[data-video-tab]");
+
     const frames = block.querySelectorAll("[data-video-frame]");
 
     if (tabs.length <= 1) return;
 
     tabs.forEach((tab) => {
       tab.addEventListener("click", () => {
-        if (!(tab instanceof HTMLButtonElement)) return;
+        if (!(tab instanceof HTMLButtonElement)) {
+          return;
+        }
 
         const platform = tab.dataset.videoTab;
 
         tabs.forEach((otherTab) => {
-          if (!(otherTab instanceof HTMLButtonElement)) return;
+          if (!(otherTab instanceof HTMLButtonElement)) {
+            return;
+          }
 
           const active = otherTab.dataset.videoTab === platform;
 
           otherTab.classList.toggle("is-active", active);
+
           otherTab.setAttribute("aria-pressed", active ? "true" : "false");
         });
 
         frames.forEach((frame) => {
-          if (!(frame instanceof HTMLElement)) return;
+          if (!(frame instanceof HTMLElement)) {
+            return;
+          }
 
           const active = frame.dataset.videoFrame === platform;
 
@@ -113,12 +135,14 @@ const defaultPlatform = hasYoutube ? "youtube" : "bilibili";
 
   .project-video-tab {
     appearance: none;
+
     border: 0;
     background: transparent;
 
     padding: 0.45rem 0.7rem;
 
     color: rgba(255, 255, 255, 0.38);
+
     font: inherit;
     font-size: 0.78rem;
 
@@ -135,6 +159,7 @@ const defaultPlatform = hasYoutube ? "youtube" : "bilibili";
 
   .project-video-tab.is-active {
     color: #fff;
+
     background: rgba(255, 255, 255, 0.06);
   }
 
@@ -142,11 +167,13 @@ const defaultPlatform = hasYoutube ? "youtube" : "bilibili";
     position: relative;
 
     aspect-ratio: 16 / 9;
+
     overflow: hidden;
 
     width: 100%;
 
     border-radius: 0.35rem;
+
     border: 1px solid rgba(255, 255, 255, 0.08);
 
     background: #050505;

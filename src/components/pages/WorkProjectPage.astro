@@ -4,6 +4,7 @@ import Footer from "../Footer.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SpatialGallery from "../SpatialGallery.astro";
 import ProjectVideo from "../ProjectVideo.astro";
+import ProjectCredits from "../ProjectCredits.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import { localizePath } from "../../i18n/utils";
 import { type Locale } from "../../i18n/ui";
@@ -40,10 +41,6 @@ const infoItems = [
   {
     label: "Interaction",
     value: data.interaction,
-  },
-  {
-    label: "My Role",
-    value: data.role,
   },
   {
     label: "Focus",
@@ -107,6 +104,7 @@ const infoItems = [
             infoItems.map((item) => (
               <div class="work-info-item">
                 <p class="work-info-label">{item.label}</p>
+
                 <p class="work-info-value">{item.value}</p>
               </div>
             ))
@@ -114,10 +112,18 @@ const infoItems = [
         </div>
 
         {
-          data.outcome && (
+          data.credits?.role && data.credits.role.length > 0 && (
             <div class="work-outcome">
-              <p class="work-info-label">Outcome</p>
-              <p>{data.outcome}</p>
+              <p class="work-info-label">My Role</p>
+              <p>{data.credits.role.join(" · ")}</p>
+            </div>
+          )
+        }
+
+        {
+          data.credits && (
+            <div class="work-credits-wrapper">
+              <ProjectCredits credits={data.credits} />
             </div>
           )
         }
@@ -176,7 +182,9 @@ const infoItems = [
     background: #000;
     color: #fff;
   }
-
+  .work-credits-wrapper {
+    margin-top: clamp(4rem, 7vw, 7rem);
+  }
   .work-container {
     width: min(calc(100% - (var(--page-padding) * 2)), 1480px);
     margin-inline: auto;

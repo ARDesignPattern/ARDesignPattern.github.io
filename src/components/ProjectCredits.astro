@@ -1,0 +1,268 @@
+---
+interface Partner {
+  name: string;
+  logo?: string;
+  url?: string;
+}
+
+interface Credits {
+  role?: string[];
+  team?: string[];
+  advisors?: string[];
+  partners?: Partner[];
+}
+
+interface Props {
+  credits?: Credits;
+}
+
+const { credits } = Astro.props;
+
+const hasRole = Boolean(credits?.role?.length);
+
+const hasTeam = Boolean(credits?.team?.length);
+
+const hasAdvisors = Boolean(credits?.advisors?.length);
+
+const hasPartners = Boolean(credits?.partners?.length);
+
+const hasCredits = hasTeam || hasAdvisors || hasPartners;
+---
+
+{
+  hasCredits && (
+    <section class="project-credits" aria-labelledby="project-credits-heading">
+      <h2 id="project-credits-heading" class="sr-only">
+        Project credits
+      </h2>
+
+      <div class="project-credits-grid">
+        {hasTeam && (
+          <div class="project-credit-item">
+            <p class="project-credit-label">Team</p>
+
+            <p class="project-credit-value">{credits!.team!.join(" · ")}</p>
+          </div>
+        )}
+
+        {hasAdvisors && (
+          <div class="project-credit-item">
+            <p class="project-credit-label">Advisors</p>
+
+            <p class="project-credit-value">{credits!.advisors!.join(" · ")}</p>
+          </div>
+        )}
+      </div>
+
+      {hasPartners && (
+        <div class="project-partners">
+          <p class="project-credit-label">Project & Partners</p>
+
+          <div class="project-partner-list">
+            {credits!.partners!.map((partner) => {
+              const content = (
+                <>
+                  {partner.logo && (
+                    <img
+                      src={partner.logo}
+                      alt={`${partner.name} logo`}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  )}
+
+                  <span>{partner.name}</span>
+                </>
+              );
+
+              return partner.url ? (
+                <a
+                  class="project-partner"
+                  href={partner.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {content}
+                </a>
+              ) : (
+                <div class="project-partner">{content}</div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </section>
+  )
+}
+
+<style>
+  .project-credits {
+    padding-top: 3rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .project-credits-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 2rem;
+  }
+
+  .project-credit-item {
+    min-width: 0;
+  }
+
+  .project-credit-label {
+    margin: 0 0 0.85rem;
+
+    color: rgba(255, 255, 255, 0.36);
+
+    font-size: 0.7rem;
+    font-weight: 500;
+
+    letter-spacing: 0.11em;
+
+    text-transform: uppercase;
+  }
+
+  .project-credit-value {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 0.92rem;
+    line-height: 1.65;
+  }
+
+  /* =========================
+     PARTNERS
+     ========================= */
+
+  .project-partners {
+    margin-top: 3rem;
+  }
+
+  .project-partner-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    column-gap: 2.25rem;
+    row-gap: 1.4rem;
+  }
+
+  .project-partner {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.7rem;
+
+    min-width: 0;
+
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 0.82rem;
+    line-height: 1.3;
+
+    text-decoration: none;
+
+    transition:
+      color 180ms ease,
+      opacity 180ms ease;
+  }
+
+  .project-partner img {
+    display: block;
+
+    width: auto;
+    height: 30px;
+
+    max-width: 110px;
+
+    object-fit: contain;
+
+    opacity: 0.6;
+
+    filter: grayscale(1) saturate(0) brightness(1.4);
+
+    transition:
+      opacity 180ms ease,
+      filter 180ms ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a.project-partner:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    a.project-partner:hover img {
+      opacity: 0.9;
+
+      filter: grayscale(1) saturate(0) brightness(1.8);
+    }
+  }
+
+  /* =========================
+     ACCESSIBILITY
+     ========================= */
+
+  .sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+  }
+
+  /* =========================
+     MOBILE
+     ========================= */
+
+  @media (max-width: 768px) {
+    .project-credits {
+      padding-top: 2.5rem;
+    }
+
+    .project-credits-grid {
+      grid-template-columns: 1fr;
+
+      gap: 2rem;
+    }
+
+    .project-partners {
+      margin-top: 2.5rem;
+    }
+
+    .project-partner-list {
+      column-gap: 1.5rem;
+      row-gap: 1.25rem;
+    }
+
+    .project-partner img {
+      height: 22px;
+
+      max-width: 95px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-partner,
+    .project-partner img {
+      transition: none;
+    }
+  }
+</style>
