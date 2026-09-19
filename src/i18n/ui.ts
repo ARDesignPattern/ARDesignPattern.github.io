@@ -51,27 +51,32 @@ export const ui = {
       title: "Designing across interaction, space, and emerging technology.",
 
       intro:
-        "I am an interaction designer and HCI/XR researcher working across immersive technology, prototyping, user research, and design research.",
+        "I am an interaction designer and HCI/XR researcher working across spatial computing, prototyping, user research, and design research.",
 
       backgroundTitle: "Background",
 
       backgroundBody:
-        "My work connects industrial design, interaction design, HCI, and XR research. I have worked across physical products, digital interfaces, immersive systems, and real-world deployments.",
+        "My background spans industrial design, digital media, interaction design, and applied computer science. This interdisciplinary path has shaped how I approach emerging technologies: not as isolated technical systems, but as tools that need to be understood, designed, tested, and adapted to real people and real environments.",
 
       workTitle: "What I Do",
 
       workBody:
-        "I design and evaluate interactive systems, develop prototypes, conduct user research, and translate research findings into reusable design knowledge.",
+        "I design and evaluate interactive systems from early concepts to field-deployed prototypes. My work combines interaction design, technical prototyping, user research, and empirical evaluation, with a particular focus on XR, spatial interfaces, and first-time users in real-world settings.",
+
+      practiceTitle: "Research & Practice",
+
+      practiceBody:
+        "My research at Hochschule RheinMain has focused on head-mounted AR and mixed-reality interaction in museums and cultural heritage environments. Alongside academic research, my earlier work in industry includes UI/UX and interaction design for smart glasses, automotive interfaces, and professional digital audio products.",
 
       approachTitle: "Approach",
 
       approachBody:
-        "My process combines design exploration, prototyping, empirical evaluation, and iterative refinement, with a strong focus on real-world interaction contexts.",
+        "My process moves between design exploration, prototyping, real-world deployment, and empirical evaluation. I use individual prototypes not only as applications, but also as research artifacts from which broader design knowledge can be derived. This has led to my doctoral work on reusable and parameterized interaction design patterns for HMD-based AR.",
 
-      contactTitle: "Get in Touch",
+      contactTitle: "Connect",
 
       contactLead:
-        "Interested in collaboration, research, design, or XR projects?",
+        "For research collaboration, interaction design, XR, HCI, or related opportunities, you can find my CV and academic profiles below.",
     },
 
     project: {
@@ -134,27 +139,32 @@ export const ui = {
         "Gestaltung an der Schnittstelle von Interaktion, Raum und neuen Technologien.",
 
       intro:
-        "Ich bin Interaction Designer und HCI/XR-Forscher und arbeite in den Bereichen immersive Technologien, Prototyping, User Research und Design Research.",
+        "Ich bin Interaction Designer und HCI/XR-Forscher und arbeite in den Bereichen Spatial Computing, Prototyping, Nutzerforschung und Designforschung.",
 
       backgroundTitle: "Hintergrund",
 
       backgroundBody:
-        "Meine Arbeit verbindet Industrial Design, Interaction Design, HCI und XR-Forschung. Ich habe an physischen Produkten, digitalen Interfaces, immersiven Systemen und realen Anwendungen gearbeitet.",
+        "Mein Hintergrund verbindet Industriedesign, digitale Medien, Interaction Design und angewandte Informatik. Diese interdisziplinäre Perspektive prägt meinen Umgang mit neuen Technologien: Ich betrachte sie nicht als isolierte technische Systeme, sondern als Werkzeuge, die verstanden, gestaltet, erprobt und an reale Menschen und Nutzungskontexte angepasst werden müssen.",
 
       workTitle: "Was ich mache",
 
       workBody:
-        "Ich gestalte und evaluiere interaktive Systeme, entwickle Prototypen, führe Nutzerstudien durch und überführe Forschungsergebnisse in wiederverwendbares Designwissen.",
+        "Ich gestalte und evaluiere interaktive Systeme von frühen Konzepten bis hin zu Prototypen, die in realen Anwendungskontexten eingesetzt werden. Meine Arbeit verbindet Interaction Design, technische Prototypentwicklung, Nutzerforschung und empirische Evaluation, mit einem besonderen Fokus auf XR, räumliche Interfaces und Erstnutzer in realen Umgebungen.",
+
+      practiceTitle: "Forschung & Praxis",
+
+      practiceBody:
+        "Meine Forschung an der Hochschule RheinMain konzentriert sich auf Head-Mounted AR und Mixed-Reality-Interaktion in Museen und kulturellen Kontexten. Neben meiner akademischen Forschung umfasst meine frühere Industrieerfahrung UI/UX- und Interaction Design für Smart Glasses, Fahrzeuginterfaces und professionelle digitale Audioprodukte.",
 
       approachTitle: "Arbeitsweise",
 
       approachBody:
-        "Mein Prozess verbindet Design Exploration, Prototyping, empirische Evaluation und iterative Weiterentwicklung – mit einem starken Fokus auf reale Nutzungskontexte.",
+        "Mein Arbeitsprozess verbindet Designexploration, Prototyping, reale Erprobung und empirische Evaluation. Prototypen dienen dabei nicht nur als Anwendungen, sondern auch als Forschungsartefakte, aus denen übertragbares Designwissen abgeleitet werden kann. Dieser Ansatz bildet die Grundlage meiner Promotion zu wiederverwendbaren und parametrisierten Interaktionsmustern für HMD-basierte Augmented Reality.",
 
       contactTitle: "Kontakt",
 
       contactLead:
-        "Interesse an Zusammenarbeit, Forschung, Design oder XR-Projekten?",
+        "Für Forschungskooperationen, Interaction Design, XR, HCI oder verwandte Projekte finden Sie unten meinen Lebenslauf und meine wissenschaftlichen Profile.",
     },
 
     project: {
@@ -199,29 +209,35 @@ export const ui = {
     about: {
       eyebrow: "关于",
 
-      title: "在交互、空间与新兴技术之间进行设计。",
+      title: "探索交互、空间与新兴技术之间的设计可能。",
 
       intro:
-        "我是一名交互设计师与 HCI/XR 研究者，工作涉及沉浸式技术、原型开发、用户研究与设计研究。",
+        "我是一名交互设计师与 HCI/XR 研究者，研究与实践涵盖空间计算、原型开发、用户研究和设计研究。",
 
       backgroundTitle: "背景",
 
       backgroundBody:
-        "我的工作连接工业设计、交互设计、人机交互与 XR 研究。我参与过实体产品、数字界面、沉浸式系统以及真实场景部署等不同类型的项目。",
+        "我的跨学科背景涵盖工业设计、数字媒体、交互设计与应用计算机科学。这一路径也塑造了我理解新兴技术的方式：我更关注技术如何被理解、设计、验证，并进一步适应真实用户与实际使用环境，而不仅仅将其视为独立的技术系统。",
 
       workTitle: "我的工作",
 
       workBody:
-        "我设计并评估交互系统，开发原型，开展用户研究，并将研究结果转化为可复用的设计知识。",
+        "我从早期概念出发，设计、实现并评估交互系统，一直到能够在真实场景中部署和测试的原型。我的工作结合交互设计、技术原型开发、用户研究与实证评价，尤其关注 XR、空间界面以及真实场景中的首次用户体验。",
 
-      approachTitle: "方法",
+      practiceTitle: "研究与实践",
+
+      practiceBody:
+        "我在 Hochschule RheinMain 的研究主要聚焦于头戴式 AR、混合现实交互，以及博物馆和文化遗产场景中的真实部署与用户研究。在进入学术研究之前，我也曾参与智能眼镜、汽车界面和专业数字音频产品的 UI/UX 与交互设计工作。",
+
+      approachTitle: "研究与设计方法",
 
       approachBody:
-        "我的工作流程结合设计探索、原型开发、实证评估与迭代优化，并特别关注真实使用场景中的交互体验。",
+        "我的工作过程连接设计探索、原型开发、真实场景部署与实证评价。我不仅把原型作为具体应用，也将其作为研究载体，从实际设计和测试过程中进一步抽象可迁移的设计知识。这一方法最终形成了我博士研究中面向 HMD-AR 的可复用、参数化交互设计模式体系。",
 
-      contactTitle: "联系我",
+      contactTitle: "联系",
 
-      contactLead: "如果你对合作、研究、设计或 XR 项目感兴趣，欢迎联系我。",
+      contactLead:
+        "如有科研合作、交互设计、XR、HCI 或相关机会，可通过下方的 CV、学术主页与联系方式进一步了解和联系我。",
     },
 
     project: {
