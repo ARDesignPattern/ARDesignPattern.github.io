@@ -30,7 +30,7 @@ gallery:
     label: "Spatial Experience"
     alt: "AR content overlaid in the whale exhibition"
 
-  - image: "/images/projects/whale-exhibition/01.png"
+  - image: "/images/projects/whale-exhibition/01.jpg"
     label: "Spatial Guidance"
     alt: "Visitor following spatial guidance in the whale exhibition"
 
@@ -38,7 +38,7 @@ gallery:
     label: "Virtual Avatar Guiding"
     alt: "AR labels positioned around the whale exhibit"
 
-  - image: "/images/projects/whale-exhibition/03.png"
+  - image: "/images/projects/whale-exhibition/03.jpg"
     label: "Experience Trigger"
     alt: "Floor-based trigger interface in the whale exhibition"
 
@@ -50,7 +50,7 @@ gallery:
     label: "Spatial anchored interface"
     alt: "Hand-based interaction with spatial AR content"
 
-  - image: "/images/projects/whale-exhibition/06.png"
+  - image: "/images/projects/whale-exhibition/06.jpg"
     label: "Hand Menu"
     alt: "Visitor using a hand menu in the AR experience"
 
@@ -58,27 +58,23 @@ gallery:
     label: "Spatial Indicator"
     alt: "Interactive AR content around the whale skeleton"
 
-  - image: "/images/projects/whale-exhibition/08.png"
+  - image: "/images/projects/whale-exhibition/08.jpg"
     label: "MR experience"
     alt: "Spatial indicator placed in the museum environment"
-
-  - image: "/images/projects/whale-exhibition/09.png"
-    label: "AR Labelling"
-    alt: "Visitor viewing explanatory AR content"
 
   - image: "/images/projects/whale-exhibition/10.jpg"
     label: "Exhibit Overlay"
     alt: "Digital anatomical information aligned with the whale exhibit"
 
-  - image: "/images/projects/whale-exhibition/11.png"
+  - image: "/images/projects/whale-exhibition/11.jpg"
     label: "Spatial Mapping for AR labels"
     alt: "AR labels anchored to physical bones"
 
-  - image: "/images/projects/whale-exhibition/12.png"
+  - image: "/images/projects/whale-exhibition/12.jpg"
     label: "AR labelling with Orca 3D overlay"
     alt: "Anatomical overview of the whale in AR"
 
-  - image: "/images/projects/whale-exhibition/13.png"
+  - image: "/images/projects/whale-exhibition/13.jpg"
     label: "Organ Explanation"
     alt: "AR explanation of internal whale anatomy"
 

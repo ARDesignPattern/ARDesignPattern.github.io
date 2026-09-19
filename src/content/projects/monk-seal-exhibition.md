@@ -23,6 +23,47 @@ tags:
   - "Quest 3"
   - "Field Deployment"
 
+gallery:
+  - image: "/images/projects/monk-seal-exhibition/StartGuide.jpg"
+    label: "Experience Start"
+    alt: "Spatial start guide introducing the monk seal AR experience"
+
+  - image: "/images/projects/monk-seal-exhibition/Location.jpg"
+    label: "Habitat Introduction"
+    alt: "Geographic presentation introducing the monk seal habitat"
+
+  - image: "/images/projects/monk-seal-exhibition/Presentation.jpg"
+    label: "Conservation Storytelling"
+    alt: "Interactive AR presentation about monk seal habitats and conservation"
+
+  - image: "/images/projects/monk-seal-exhibition/ARLabelling.jpg"
+    label: "Exhibit Labelling"
+    alt: "AR labels positioned around the monk seal exhibit"
+
+  - image: "/images/projects/monk-seal-exhibition/FollowTheSeal.jpg"
+    label: "Spatial Guidance"
+    alt: "Virtual monk seal guiding the visitor through the museum experience"
+
+  - image: "/images/projects/monk-seal-exhibition/StepControl.jpg"
+    label: "Step-Based Interaction"
+    alt: "Spatial interface for progressing through the monk seal experience"
+
+  - image: "/images/projects/monk-seal-exhibition/VRScene.jpg"
+    label: "Habitat Environment"
+    alt: "Immersive virtual environment representing the monk seal habitat"
+
+  - image: "/images/projects/monk-seal-exhibition/WhereItLive.jpg"
+    label: "Habitat Exploration"
+    alt: "Virtual monk seals presented within their environmental context"
+
+  - image: "/images/projects/monk-seal-exhibition/MRexperience.jpg"
+    label: "Mixed-Reality Scene"
+    alt: "Monk seal integrated into the physical museum environment using mixed reality"
+
+  - image: "/images/projects/monk-seal-exhibition/MR_Experience.jpg"
+    label: "Exhibit Overlay"
+    alt: "Spatial monk seal visualization"
+
 video:
   youtube: "https://www.youtube.com/embed/pG-PPrHqS3k"
   bilibili: ""

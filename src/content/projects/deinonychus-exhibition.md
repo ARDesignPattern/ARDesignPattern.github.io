@@ -25,7 +25,7 @@ tags:
 
 gallery:
   - image: "/images/projects/deinonychus-exhibition/BreakingTheGlass.jpg"
-    label: "Breaking the Display"
+    label: "Breaking the Glass Moment"
     alt: "Virtual Deinonychus breaking through the museum display"
 
   - image: "/images/projects/deinonychus-exhibition/WalkTowardTheUser.jpg"

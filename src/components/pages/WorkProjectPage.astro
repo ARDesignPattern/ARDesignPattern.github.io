@@ -366,29 +366,120 @@ const infoItems = [
      TABLET
      ========================= */
 
-  @media (max-width: 900px) {
+  /* =========================
+   TABLET
+   ========================= */
+
+  @media (max-width: 1024px) {
+    .work-project-page {
+      padding-top: 5.5rem;
+    }
+
+    .work-hero {
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+
+    .work-hero h1 {
+      max-width: 13ch;
+
+      font-size: clamp(3.8rem, 9vw, 6.8rem);
+      line-height: 0.92;
+    }
+
+    .work-subtitle {
+      max-width: 36rem;
+    }
+
     .work-info-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .work-info-item {
+      min-height: 8rem;
+    }
+
+    .work-video-section,
+    .work-info-section {
+      padding-bottom: clamp(5rem, 9vw, 8rem);
     }
   }
 
   /* =========================
-     MOBILE
-     ========================= */
+   MOBILE
+   ========================= */
 
   @media (max-width: 768px) {
     .work-project-page {
-      padding-top: 5rem;
+      padding-top: 4.5rem;
     }
 
+    .work-container {
+      width: calc(100% - (var(--page-padding) * 2));
+    }
+
+    /* HERO */
+
     .work-hero {
-      padding-top: 4rem;
+      padding-top: 3.5rem;
+      padding-bottom: 3rem;
     }
 
     .work-hero h1 {
       max-width: none;
-      font-size: clamp(3rem, 15vw, 5.5rem);
+
+      font-size: clamp(3rem, 14vw, 5.2rem);
+
       line-height: 0.92;
+      letter-spacing: -0.05em;
+    }
+
+    .work-subtitle {
+      max-width: 30rem;
+
+      margin-top: 1.5rem;
+
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .work-tags {
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .work-tags span {
+      padding: 0.42rem 0.68rem;
+      font-size: 0.72rem;
+    }
+
+    /* GALLERY */
+
+    .work-gallery-section {
+      padding-bottom: 5rem;
+    }
+
+    /*
+    Gallery interaction itself is handled
+    inside SpatialGallery.astro.
+
+    On tablet / mobile:
+    - native horizontal swipe
+    - no click expansion
+    - no pointer-driven movement
+    - no hover requirement
+  */
+
+    /* VIDEO */
+
+    .work-video-section {
+      padding-bottom: 5rem;
+    }
+
+    /* PROJECT INFO */
+
+    .work-info-section {
+      padding-bottom: 5rem;
     }
 
     .work-info-grid {
@@ -397,11 +488,47 @@ const infoItems = [
 
     .work-info-item {
       min-height: auto;
-      padding: 1.5rem 0;
+
+      padding: 1.4rem 0;
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .work-info-label {
+      margin-bottom: 0.7rem;
+    }
+
+    .work-info-value {
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .work-outcome {
+      margin-top: 2.5rem;
+    }
+
+    .work-outcome p:last-child {
+      font-size: clamp(1.5rem, 7vw, 2.3rem);
+
+      line-height: 1.25;
+    }
+
+    .work-credits-wrapper {
+      margin-top: 4rem;
+    }
+
+    /* BOTTOM NAV */
+
+    .work-project-nav {
+      padding-top: 2.5rem;
+      padding-bottom: 3.5rem;
     }
 
     .work-project-nav-grid {
       grid-template-columns: 1fr;
+
+      gap: 2rem;
+
       align-items: start;
     }
 
@@ -411,7 +538,35 @@ const infoItems = [
 
     .work-back-link {
       order: 3;
-      margin-top: 1rem;
+
+      margin-top: 0.5rem;
+    }
+  }
+
+  /* =========================
+   SMALL MOBILE
+   ========================= */
+
+  @media (max-width: 480px) {
+    .work-hero h1 {
+      font-size: clamp(2.8rem, 15vw, 4.4rem);
+    }
+
+    .work-subtitle {
+      font-size: 0.95rem;
+    }
+
+    .work-tags span {
+      font-size: 0.68rem;
+    }
+
+    .work-gallery-section {
+      padding-bottom: 4rem;
+    }
+
+    .work-video-section,
+    .work-info-section {
+      padding-bottom: 4rem;
     }
   }
 </style>
