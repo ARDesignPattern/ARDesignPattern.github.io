@@ -172,19 +172,19 @@
     "authorRole": "co-author",
     "year": "2024",
     "title": "Creating Location-based Visual Presence Experiences for Museums with Immersive Technology",
-    "authors": ["Ulrike Spierling", "J. L. Bitter", "N. Kräuter", "Yu Liu"],
+    "authors": [
+      "Ulrike Spierling",
+      "Jessica L. Bitter",
+      "Noura Kräuter",
+      "Yu Liu"
+    ],
     "venue": "Eurographics Workshop on Graphics and Cultural Heritage (GCH), 2024",
-    "type": "Conference Paper",
+    "type": "Poster",
     "doi": "10.2312/gch.20241271",
-    "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": [
-      "Immersive Technology",
-      "Museums",
-      "Location-based Experiences",
-      "Visual Presence"
-    ]
+    "url": "https://doi.org/10.2312/gch.20241271",
+    "image": "https://yuliu.design/images/publications/gch-2024-location-based-visual-presence.jpeg",
+    "abstract": "This Poster (accompanying demos) presents an overview of creative approaches and considerations in the design research process of exploring different feelings of immersion and presence through Augmented Reality with headmounted devices in a museum. It shows ongoing work in the EU-funded project LoGaCulture (Locative Games in Cultural Heritage), in particular in the practical research that develops case studies for a Natural History museum. We summarise design criteria, concepts and prototypical implementations regarding the qualities of presence, playfulness and usability.",
+    "topics": ["HMD-AR", "Presence", "Immersion", "Cultural Heritage"]
   },
   {
     "slug": "interaction-challenges-first-time-hmd-ar-users",
@@ -220,18 +220,23 @@
     ]
   },
   {
-    "slug": "immersive-ar-game-based-learning-museums",
+    "slug": "chances-limitations-immersive-ar-game-based-learning",
     "authorRole": "co-author",
     "year": "2023",
     "title": "Chances and Limitations of Immersive Augmented Reality for Game-based Learning in Museums",
-    "authors": ["Ulrike Spierling", "J. L. Bitter", "Yu Liu", "T. Müller"],
-    "venue": "ECGBL 2023, pp. 643–650",
+    "authors": [
+      "Ulrike Spierling",
+      "Jessica L. Bitter",
+      "Yu Liu",
+      "Thorolf Müller"
+    ],
+    "venue": "European Conference on Games Based Learning (ECGBL), 2023, pp. 643–650",
     "type": "Conference Paper",
     "doi": "10.34190/ecgbl.17.1.1851",
-    "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": ["Immersive AR", "Game-based Learning", "Museums", "Education"]
+    "url": "https://doi.org/10.34190/ecgbl.17.1.1851",
+    "image": "https://yuliu.design/images/publications/ecgbl-2023-immersive-ar-game-based-learning.jpeg",
+    "abstract": "This article discusses opportunities and limitations of using immersive augmented reality (AR) with head-mounted displays for gaming and education in museums. We first report on a prototype application for HoloLens 2 that we developed and tested with 109 museum visitors in a recent project for an exhibition with large animal skeletons. The results show that the feedback from visitors was overall positive, while more steps are needed before it can be implemented in a museum routine. Based on the findings, we discuss hypotheses for the planned further development of the approaches towards game-based learning in the real environment of a natural history museum.",
+    "topics": ["HMD-AR", "Game-based Learning", "Museums", "Cultural Heritage"]
   },
   {
     "slug": "hci-patterns-hmd-ar-exhibition-domain",
@@ -248,44 +253,49 @@
     "topics": ["HMD-AR", "Interaction Patterns", "Accessibility", "Authoring"]
   },
   {
-    "slug": "blue-butterfly-ar-museum-guide",
+    "slug": "follow-blue-butterfly-immersive-ar-museum-guide",
     "authorRole": "co-author",
     "year": "2022",
     "title": "Follow the Blue Butterfly – An Immersive Augmented Reality Museum Guide",
     "authors": [
-      "J. L. Bitter",
+      "Jessica L. Bitter",
       "Ralf Dörner",
       "Yu Liu",
-      "L. Rau",
+      "Linda Rau",
       "Ulrike Spierling"
     ],
-    "venue": "HCII, Springer, 2022, pp. 171–178",
-    "type": "Conference Paper",
-    "doi": "",
-    "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": ["Immersive AR", "Museum Guide", "Navigation", "HCI"]
+    "venue": "HCII 2022 Posters, CCIS 1582, Springer, pp. 171–178",
+    "type": "Conference Poster Paper",
+    "doi": "10.1007/978-3-031-06391-6_23",
+    "url": "https://doi.org/10.1007/978-3-031-06391-6_23",
+    "image": "https://yuliu.design/images/publications/hcii-2022-follow-blue-butterfly.jpeg",
+    "abstract": "We present our concept and prototypical implementation of an avatar guide that helps museum visitors to navigate to chosen points of interest. The prototype shows an animated butterfly with interactive behavior that is controlled by a state machine. The avatar’s path can be pre-defined at an authoring stage, by walking the space with the head-mounted display and by placing path nodes interactively, or it can be generated at runtime, in which case the whole area needs to be scanned and processed beforehand. As the app is iteratively redesigned and tested with first-time users for accessibility, we report on first lessons learnt.",
+    "topics": ["HMD-AR", "Museum Guidance", "Avatar Guide", "Navigation"]
   },
   {
-    "slug": "non-linear-everyday-ar-authoring",
+    "slug": "non-linear-ar-authoring-building-blocks",
     "authorRole": "co-author",
     "year": "2022",
     "title": "Supporting the Creation of Non-linear Everyday AR Experiences in Exhibitions and Museums: An Authoring Process Based on Self-contained Building Blocks",
     "authors": [
-      "L. Rau",
+      "Linda Rau",
+      "Jessica L. Bitter",
       "Yu Liu",
-      "J. L. Bitter",
       "Ulrike Spierling",
       "Ralf Dörner"
     ],
-    "venue": "Frontiers in Virtual Reality, 2022",
+    "venue": "Frontiers in Virtual Reality, Vol. 3, 2022",
     "type": "Journal Article",
-    "doi": "",
-    "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": ["AR Authoring", "Museums", "Exhibitions", "Interaction Design"]
+    "doi": "10.3389/frvir.2022.955437",
+    "url": "https://doi.org/10.3389/frvir.2022.955437",
+    "image": "https://yuliu.design/images/publications/frontiers-2022-nonlinear-ar-authoring.jpeg",
+    "abstract": "The use of Augmented Reality (AR) has the potential to make everyday experiences exciting and educational. For example, AR can augment exhibits in museums with animated and interactive content. The creation of this content, however, is still facing challenges. To meet these, we employ reusable, pattern-based building blocks called AR nuggets. An AR nugget implements one application pattern in a small and self-contained piece of software to provide a complete solution for recurrent AR-based experiences. For example, in the application context of museums and exhibitions, we identify superimposition or visualization of echolocation as general patterns for AR use cases. AR nuggets encapsulate AR-specific knowledge and sophisticated functionalities to support authors and reduce the authoring task to tweaking existing templates to individual exhibits. To connect AR nuggets used in different exhibition rooms, we present novel AR nuggets that encapsulate the functionalities needed for creating a path between the exhibits. Additionally, we provide examples of AR nuggets that implement a virtual character that guides visitors to exhibits of interest. With this new set of AR nuggets, spatial connections can be authored, e.g., in the form of a guided tour with interactive narration. For this authoring task, we introduce an AR nugget manager that supports authors in creating and adapting multiple non-linear AR experiences. We illustrate our approach with the creation of an everyday AR application for a museum of natural history, share our experiences and discuss to what extent our approach can mitigate authoring challenges for everyday AR applications from a museum’s point of view.",
+    "topics": [
+      "AR Authoring",
+      "Design Patterns",
+      "Non-linear Experiences",
+      "Museums"
+    ]
   },
   {
     "slug": "handheld-vs-head-mounted-ar-interaction-patterns",
@@ -311,14 +321,19 @@
     "authorRole": "co-author",
     "year": "2021",
     "title": "A Nugget-Based Concept for Creating Augmented Reality",
-    "authors": ["L. Rau", "R. Horst", "Yu Liu", "Ralf Dörner"],
-    "venue": "IEEE ISMAR-Adjunct, 2021",
+    "authors": ["Linda Rau", "Robin Horst", "Yu Liu", "Ralf Dörner"],
+    "venue": "IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct), 2021, pp. 212–217",
     "type": "Conference Paper",
     "doi": "10.1109/ISMAR-Adjunct54149.2021.00051",
-    "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": ["AR Authoring", "Augmented Reality", "Interaction Design"]
+    "url": "https://doi.org/10.1109/ISMAR-Adjunct54149.2021.00051",
+    "image": "https://yuliu.design/images/publications/ismar-2021-nugget-based-ar-authoring.jpeg",
+    "abstract": "Creating Augmented Reality applications often requires substantial technical expertise and repeated implementation work. This paper introduces the concept of AR nuggets: small, self-contained and reusable AR applications based on recurring application patterns. Each nugget encapsulates objects, parameters and a target for anchoring virtual content in the real world, allowing authors to adapt an existing solution instead of creating an AR application from scratch. The concept aims to reduce the complexity of AR authoring and provide reusable building blocks that can be customized for different application scenarios.",
+    "topics": [
+      "AR Authoring",
+      "Design Patterns",
+      "Reusable Components",
+      "Augmented Reality"
+    ]
   },
   {
     "slug": "tangible-object-mobile-ar",
@@ -326,18 +341,23 @@
     "year": "2020",
     "title": "A Tangible Object for General Purposes in Mobile Augmented Reality Applications",
     "authors": [
-      "L. Rau",
-      "R. Horst",
+      "Linda Rau",
+      "Robin Horst",
       "Yu Liu",
       "Ralf Dörner",
       "Ulrike Spierling"
     ],
-    "venue": "Smart Systems for Better Living Environments, 2020",
-    "type": "Conference Contribution",
-    "doi": "",
-    "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": ["Mobile AR", "Tangible Interaction", "Interaction Design"]
+    "venue": "INFORMATIK 2020, Lecture Notes in Informatics (LNI), Gesellschaft für Informatik",
+    "type": "Conference Paper",
+    "doi": "10.18420/INF2020_87",
+    "url": "https://doi.org/10.18420/INF2020_87",
+    "image": "https://yuliu.design/images/publications/informatik-2020-tangible-object-mobile-ar.jpeg",
+    "abstract": "Smartphones and tablets are common technologies within today’s private living environments. They are well-suited to serve as a platform for mobile Augmented Reality (AR). Tangible AR is a subclass of AR which includes tangible objects and can make interactions intuitive. With this, new options for human-computer interaction become available at home. Based on literature research and design rationale, we identify requirements that help to develop a tangible object which can intuitively be used as tangible user interface (TUI) for mobile AR applications. Users should be able to handle the tangible object comfortably. Additionally, it needs to be reliably trackable with today’s tracking algorithms. The tangible object should also offer affordances to the users. We strive to develop a single, versatile object that is usable in different application scenarios at home. Our approach is to design a tangible object that combines different surfaces and shapes to offer various affordances and interaction possibilities. A physical instance of this object can be created with a 3D printer. We argue that this allows users to trigger actions intuitively in an AR environment or to manipulate virtual content.",
+    "topics": [
+      "Mobile AR",
+      "Tangible Interaction",
+      "Tangible User Interfaces",
+      "Interaction Design"
+    ]
   }
 ]
