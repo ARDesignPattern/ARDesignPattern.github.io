@@ -99,8 +99,8 @@ credits:
       url: "https://www.hs-rm.de/"
 
     - name: "Natural History Museum of Funchal"
-      logo: "/images/logos/funchal-museum-white.svg"
-      url: "https://cultura.madeira.gov.pt/museus/museu-de-historia-natural-do-funchal.html"
+      logo: "/images/logos/MMF-logo-white.svg"
+      url: "https://mmf.funchal.pt/"
 
 previous: "triceratops-exhibition"
 next: "whale-exhibition"

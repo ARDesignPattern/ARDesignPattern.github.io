@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 140" role="img" aria-label="Bosch logo white">
+  <g fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="72" cy="70" r="54"/>
+    <circle cx="72" cy="70" r="36"/>
+    <path d="M56 42 L56 98"/>
+    <path d="M88 42 L88 98"/>
+    <path d="M56 52 L88 52"/>
+    <path d="M56 88 L88 88"/>
+    <path d="M56 70 L88 70"/>
+  </g>
+  <text x="145" y="95" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700" letter-spacing="1">BOSCH</text>
+</svg>
