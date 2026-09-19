@@ -1,6 +1,9 @@
 ---
 import { site } from "../data/site";
+
 const year = new Date().getFullYear();
+
+const copyrightYear = year === 2026 ? "2026" : `2026–${year}`;
 ---
 
 <footer class="site-footer" id="contact">
@@ -22,20 +25,28 @@ const year = new Date().getFullYear();
       </div>
 
       <div class="footer-links">
-        <a href={site.social.github} target="_blank" rel="noreferrer">
+        <a href={site.social.github} target="_blank" rel="noopener noreferrer">
           GitHub ↗
         </a>
 
         {
           site.social.linkedin && (
-            <a href={site.social.linkedin} target="_blank" rel="noreferrer">
+            <a
+              href={site.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               LinkedIn ↗
             </a>
           )
         }
       </div>
 
-      <p class="footer-year">© {year}</p>
+      <div class="footer-copyright">
+        <span>© {copyrightYear} Yu Liu</span>
+        <span aria-hidden="true">·</span>
+        <a href="/license/">Copyright & License</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -76,8 +87,7 @@ const year = new Date().getFullYear();
   }
 
   .footer-name,
-  .footer-role,
-  .footer-year {
+  .footer-role {
     margin: 0;
   }
 
@@ -86,8 +96,7 @@ const year = new Date().getFullYear();
     font-weight: 600;
   }
 
-  .footer-role,
-  .footer-year {
+  .footer-role {
     margin-top: 0.3rem;
     font-size: var(--text-xs);
     color: var(--muted);
@@ -108,6 +117,26 @@ const year = new Date().getFullYear();
   .footer-links a:hover {
     color: var(--text);
   }
+  .footer-copyright {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.35rem;
+
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  .footer-copyright a {
+    color: inherit;
+    text-decoration: none;
+
+    transition: color var(--transition-fast);
+  }
+
+  .footer-copyright a:hover {
+    color: var(--text);
+  }
 
   @media (max-width: 768px) {
     .footer-bottom {
@@ -115,7 +144,8 @@ const year = new Date().getFullYear();
       align-items: start;
     }
 
-    .footer-year {
+    .footer-copyright {
+      justify-content: flex-start;
       margin-top: 1rem;
     }
   }

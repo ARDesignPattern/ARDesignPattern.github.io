@@ -1,0 +1,183 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
+---
+
+<BaseLayout
+  title="Copyright & License — Yu Liu"
+  description="Copyright and licensing information for yuliu.design."
+>
+  <Header />
+
+  <main class="license-page">
+    <section class="license-hero">
+      <div class="container">
+        <p class="eyebrow">Copyright & License</p>
+
+        <h1>Copyright and License</h1>
+
+        <p class="license-intro">
+          Information about the ownership and permitted use of content published
+          on this website.
+        </p>
+      </div>
+    </section>
+
+    <section class="license-section">
+      <div class="container license-grid">
+        <div>
+          <p class="eyebrow">Original Content</p>
+        </div>
+
+        <div class="license-copy">
+          <p>
+            © 2026 Yu Liu. Unless otherwise stated, original text, project
+            descriptions, interface designs, diagrams, research documentation,
+            and other original portfolio materials published on this website are
+            protected by copyright. All rights reserved.
+          </p>
+
+          <p>
+            Reproduction, redistribution, modification, or commercial use of
+            original portfolio content requires prior permission unless a
+            separate license is explicitly stated.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="license-section">
+      <div class="container license-grid">
+        <div>
+          <p class="eyebrow">Third-Party Materials</p>
+        </div>
+
+        <div class="license-copy">
+          <p>
+            Third-party trademarks, logos, photographs, publications, product
+            images, project assets, and materials created by collaborators,
+            employers, research partners, museums, or other organizations remain
+            the property of their respective rights holders.
+          </p>
+
+          <p>
+            Their appearance on this website does not imply ownership by Yu Liu
+            and does not transfer or extend any license to those materials.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="license-section">
+      <div class="container license-grid">
+        <div>
+          <p class="eyebrow">Research Materials</p>
+        </div>
+
+        <div class="license-copy">
+          <p>
+            Some research materials, publications, datasets, code, or
+            documentation referenced on this website may be subject to separate
+            publisher, institutional, project-specific, open-source, or Creative
+            Commons licenses.
+          </p>
+
+          <p>
+            Where a separate license applies, it will be indicated on the
+            relevant page or linked resource.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="license-section">
+      <div class="container license-grid">
+        <div>
+          <p class="eyebrow">Questions</p>
+        </div>
+
+        <div class="license-copy">
+          <p>
+            For questions regarding reuse, attribution, or permissions, please
+            contact me through the email address listed on this website.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .license-page {
+    padding-top: 7rem;
+  }
+
+  .license-hero {
+    padding-block: clamp(4rem, 9vw, 8rem);
+  }
+
+  .license-hero h1 {
+    max-width: 14ch;
+    margin: 1.4rem 0 2rem;
+
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+    font-weight: 600;
+  }
+
+  .license-intro {
+    max-width: 42rem;
+    margin: 0;
+
+    font-size: var(--text-md);
+    line-height: 1.4;
+    color: var(--muted);
+  }
+
+  .license-section {
+    padding-block: clamp(4rem, 8vw, 7rem);
+    border-top: 1px solid var(--line);
+  }
+
+  .license-grid {
+    display: grid;
+    grid-template-columns: minmax(10rem, 0.7fr) minmax(0, 1.8fr);
+    gap: clamp(2rem, 6vw, 7rem);
+  }
+
+  .license-copy {
+    max-width: 50rem;
+  }
+
+  .license-copy p {
+    margin: 0 0 1.5rem;
+
+    font-size: var(--text-body);
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  .license-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .license-page {
+      padding-top: 5rem;
+    }
+
+    .license-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .license-hero h1 {
+      max-width: none;
+    }
+  }
+</style>
