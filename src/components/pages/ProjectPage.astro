@@ -112,8 +112,10 @@ const projectSchema = {
     {
       project.data.credits && (
         <section class="project-credits-section">
-          <div class="container credits-container">
-            <ProjectCredits credits={project.data.credits} />
+          <div class="container">
+            <div class="credits-inner">
+              <ProjectCredits credits={project.data.credits} />
+            </div>
           </div>
         </section>
       )
@@ -254,7 +256,7 @@ const projectSchema = {
     padding-bottom: clamp(5rem, 8vw, 8rem);
   }
 
-  .credits-container {
+  .credits-inner {
     max-width: 52rem;
   }
 
