@@ -8,53 +8,60 @@
     "venue": "ACM International Conference on Interactive Media Experiences (IMX), 2026, pp. 46–64",
     "type": "Conference Paper",
     "doi": "10.1145/3788851.3805010",
-    "url": "",
-    "image": "",
-    "abstract": "",
+    "url": "https://doi.org/10.1145/3788851.3805010",
+    "image": "/images/literature/imx-2026-pattern-language-figure1.jpeg",
+    "abstract": "Head-mounted AR (HMD-AR) is entering museums and exhibitions, yet creators such as AR developers and designers lack a reusable, parameterized, and verifiable interaction vocabulary for first-time visitors. We present a pattern language for cultural-heritage HMD-AR organized into three classes—PoI Guiding, Experience Indicating, and Experience Presenting—with nine sub-patterns that specify default safety bands and composition rules. Patterns map one-to-one to Unity prefabs on an instrumented runtime with unified logging. Using a Design Science Research (DSR) combined with Research-through-Design (RtD) approach, we instantiated two in-situ prototypes at European natural-history exhibits and evaluated them through creator panels (AR developers and cultural-heritage practitioners, N = 10) and visitor studies (N = 68) on HoloLens 2 and Quest 3. Experts judged the language clear and recommendable, and in-museum results met accepted thresholds for usability, workload, user experience, and presence, with stable behavioral logs under the studied operational conditions. Cross-site synthesis across two natural-history museum deployments showed directionally consistent outcomes and suggested that the interaction layer could be transferred with low effort within this scope: deployments required parameter localization, while core compositions and state machines remained unchanged. We contribute a parameterized, composable interaction language; aligned reference implementations and prototypes; creator- and user-side evidence; and a standardized mapping from constructs to metrics, measures, and decision rules for reproducible cross-study comparison. We release pattern cards, parameter documentation, and reusable Unity prefabs through a public GitHub repository to support transparent reuse, replication, and cross-study comparison.",
     "topics": ["HCI", "HMD-AR", "Design Patterns", "Museums"]
   },
   {
     "slug": "relational-interactivity-hybrid-museological-spaces",
     "authorRole": "co-author",
     "year": "2026",
-    "title": "Towards Relational Interactivity: Investigating More-than-Human Engagement in Hybrid Museological Spaces",
+    "title": "Toward Relational Interactivity: Investigating More-than-Human Engagement in Hybrid Museological Spaces",
     "authors": [
-      "P. Galvão-Ferreira",
-      "M. Ferreira",
+      "Pedro Galvão-Ferreira",
+      "Marta Ferreira",
       "Yu Liu",
-      "N. Kräuter",
-      "T. Paulino",
-      "B. Soybilge",
-      "N. Nunes",
+      "Noura Kräuter",
+      "Teresa Paulino",
+      "Beste Soybilge",
+      "Nuno Nunes",
       "Ulrike Spierling",
-      "V. Nisi"
+      "Valentina Nisi"
     ],
-    "venue": "International Journal of Human-Computer Interaction, 2026, forthcoming",
+    "venue": "International Journal of Human-Computer Interaction, 2026",
     "type": "Journal Article",
-    "doi": "",
-    "url": "",
+    "doi": "10.1080/10447318.2026.2684277",
+    "url": "https://doi.org/10.1080/10447318.2026.2684277",
     "image": "",
-    "abstract": "",
+    "abstract": "This paper investigates how interactive technologies can cultivate more-than-human (MtH) engagement within natural history museums when conceptualized as hybrid museological spaces. Responding to ecological and posthuman turns in HCI and museum studies, we present a comparative, in-the-wild study of five interactive prototypes – an AI conversational agent, an interactive visual narrative installation, a collaborative story-driven board game, and two augmented reality experiences (based on MtH interactions in the museum floor and outdoor garden) – designed to foster relational encounters between humans, technologies, and nonhumans. Drawing on qualitative data from seventy-one visitors, we identify six overarching themes that elucidate the experiential qualities through which MtH relations were negotiated, including nonhuman co-participation, situated ecologies of participation, affective-ethical entanglements, and narrative co-storying. Synthesizing these insights, we propose relational interactivity as a strong concept that shifts focus from individualized, system-centered interaction toward distributed agency, shared perceptual access, and ecological attunement, offering new directions for multispecies heritage technologies.",
     "topics": [
       "HCI",
+      "More-than-Human Interaction",
       "Hybrid Museological Spaces",
-      "Museums",
-      "More-than-Human Interaction"
+      "Cultural Heritage"
     ]
   },
   {
     "slug": "semantic-anchoring-hmd-ar",
     "authorRole": "first-author",
     "year": "2026",
-    "title": "Semantic Anchoring in HMD-based Museum AR: A Mixed-Methods Study of UI Placement and Experience",
-    "authors": ["Yu Liu", "Ulrike Spierling"],
+    "title": "Semantic Anchoring in Head-Mounted Display-based Museum Augmented Reality: A Mixed-Methods Study of User Interface Placement and Experience",
+    "authors": [
+      "Yu Liu",
+      "Anna Behrens",
+      "Annika Bender",
+      "Sarah-Sophie Kiesow",
+      "Lea Trageser",
+      "Ulrike Spierling"
+    ],
     "venue": "HCII 2026",
     "type": "Conference Paper",
     "doi": "",
     "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": ["HCI", "Spatial UI", "HMD-AR", "Museums"]
+    "image": "/images/literature/hcii-2026-semantic-anchoring-figure1.jpg",
+    "abstract": "Head-mounted display (HMD) augmented reality (AR) is increasingly used in museums, yet in-situ evidence on where to place and anchor UI controls remains limited. We compare body-anchored controls (hand-attached) and exhibit-anchored controls (placed on/near the artefact) in an AR experience for a life-size orca exhibit. Following a Design Science Research process, we iterated the system into two design packages and evaluated them in two consecutive field studies with independent visitor cohorts (N=46; 23 per round) using questionnaires, structured observation, and interviews. Both versions were perceived as accessible and acceptable, but showed distinct experience profiles. The body-anchored package was associated with more user-initiated interventions and movement-based exploration and tended to show higher self-reported spatial presence and gameful experience. The exhibit-anchored package foregrounded exhibit-centric controls and clearer closure and was accompanied by more stationary, observational use and more neutral presence and gameful ratings. These findings indicate a design-package-level trade-off between semantic coherence and interaction initiative, suggesting that museum AR should preserve action readiness and mobility while keeping controls meaningfully tied to exhibits.",
+    "topics": ["HCI", "HMD-AR", "Spatial UI", "UI Anchoring"]
   },
   {
     "slug": "parameterized-hmd-ar-design-patterns",
@@ -66,8 +73,8 @@
     "type": "Conference Paper",
     "doi": "",
     "url": "",
-    "image": "",
-    "abstract": "",
+    "image": "/images/literature/hcii-2026-parameterized-design-patterns.jpeg",
+    "abstract": "Head-mounted display-based augmented reality systems enrich museum and cultural heritage visits, yet designing intuitive and reusable interactions in diverse exhibit settings remains challenging. This paper presents a set of domain-specific interaction design patterns that incorporate explicit design parameters, developed through a Design Science Research approach and iterative prototyping in a natural science museum. We identify three core AR interaction patterns, namely Point of Interest Guide, AR Experience Indicator, and AR Experience Presenter, which address common visitor needs such as exhibit navigation, content discovery, and information exploration. Each pattern is documented using a five-part template (Name, Problem, Context, Use When, Solution) and can be customized via parameters such as animation speed, activation mechanism, and interface positioning. Empirical validation using adapted SUS- and NASA-TLX-inspired 5-point questionnaires and qualitative feedback demonstrates the robustness of each pattern and highlights how certain parameter adjustments influence usability, perceived workload, and parameter-dependent preferences in museum-like settings, providing a flexible and empirically grounded roadmap for creating immersive, visitor-centric AR experiences in cultural heritage settings.",
     "topics": ["HCI", "HMD-AR", "Design Patterns", "Cultural Heritage"]
   },
   {
@@ -76,13 +83,13 @@
     "year": "2026",
     "title": "Comparing Flow, Narrative, and Spatial Immersion in an HMD-AR Serious Game for Museum Learning",
     "authors": ["Yu Liu", "Michael Lurz", "Ulrike Spierling"],
-    "venue": "ECGBL 2026, accepted",
+    "venue": "European Conference on Games Based Learning (ECGBL), 2026",
     "type": "Conference Paper",
     "doi": "",
     "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": ["HMD-AR", "Immersion", "Serious Games", "Museum Learning"]
+    "image": "/images/literature/ecgbl-2026-immersion-museum-learning.jpeg",
+    "abstract": "Head-mounted display augmented reality (HMD-AR) can enrich museum-based game-based learning by situating interactive digital content in relation to physical exhibits, but may also distract visitors or shift attention away from interpretation. This paper investigates how flow, narrative, and spatial immersion relate to appreciation-related outcomes in an HMD-AR serious game for museum learning. We designed a coral-reef protection game in three variants, each foregrounding one immersive quality. In a between-subjects field study with 144 valid museum visitors, participants experienced one variant and completed questionnaires and short interviews. Results showed a differentiated pattern: the flow-enhanced variant showed the clearest alignment between design emphasis and perceived immersion, while the spatial-enhanced variant highlighted a tension between environmental richness and awareness of the surrounding museum space. Narrative immersion was associated with perceived meaning and educational value, whereas post-experience engagement intentions were mainly shaped by prior engagement. We argue that HMD-AR museum games should align specific immersive qualities with interpretation, attention, and meaning-making rather than maximize immersion as a generic goal.",
+    "topics": ["HMD-AR", "Serious Games", "Immersion", "Museum Learning"]
   },
   {
     "slug": "playful-ar-design-patterns-cultural-heritage",
@@ -93,12 +100,12 @@
     "venue": "ACM Designing Interactive Systems Conference (DIS), 2025",
     "type": "Conference Paper",
     "doi": "10.1145/3715336.3735842",
-    "url": "",
-    "image": "",
-    "abstract": "",
+    "url": "https://doi.org/10.1145/3715336.3735842",
+    "image": "/images/literature/dis-2025-playful-ar-design-patterns.jpeg",
+    "abstract": "Emerging advancements in augmented reality (AR) offer substantial potential to enrich museum exhibits with interactive and engaging content, yet head-mounted AR devices pose usability challenges for novice users. This study investigates how three distinct game mechanics—jigsaw puzzles, object catching, and spatial drawing—can address these challenges in a natural science museum setting. Implemented on Microsoft HoloLens 2, these mechanics were designed to enhance visitor engagement, learning, and immersion, while also contributing to the ongoing refinement of an interaction design pattern language tailored for AR applications. A structured evaluation framework combining usability, cognitive load, immersion, and engagement metrics suggests that each mechanic can improve user participation and comprehension of exhibit content, despite environmental distractions and gesture-recognition errors. Additionally, our findings illuminate how integrating game mechanics within a pattern language can guide developers in creating playful, instructive interactions for cultural heritage contexts. By situating the developed prototypes within a design pattern framework, this research demonstrates both theoretical and practical advances in gamified AR experiences, providing tangible guidelines for adapting and personalizing museum exhibits and informing similar applications in education and other cultural heritage contexts.",
     "topics": [
       "Interaction Design",
-      "AR",
+      "HMD-AR",
       "Game Mechanics",
       "Cultural Heritage"
     ]
@@ -107,15 +114,20 @@
     "slug": "playful-locative-interaction-museums",
     "authorRole": "first-author",
     "year": "2025",
-    "title": "Playful Locative Interaction in Museums and Exhibition with Immersive Augmented Reality",
+    "title": "Playful Locative Interaction in Museums and Exhibitions with Immersive Augmented Reality",
     "authors": ["Yu Liu", "Manuel Feller", "Ulrike Spierling"],
-    "venue": "JCSG 2024, LNCS 15259, Springer, 2025, pp. 1–16",
+    "venue": "JCSG 2024, LNCS 15259, Springer, 2025, pp. 247–262",
     "type": "Book Chapter",
     "doi": "10.1007/978-3-031-74138-8_18",
-    "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": ["AR", "Locative Interaction", "Playfulness", "Museums"]
+    "url": "https://doi.org/10.1007/978-3-031-74138-8_18",
+    "image": "/images/literature/jcsg-2024-playful-locative-interaction.jpeg",
+    "abstract": "Head-mounted augmented reality (AR) technology enhances the museum experience by immersing visitors in heritage content. Location-based applications attract online audiences to physical sites, which is also crucial for the dissemination of cultural heritage. This study develops and evaluates specific interaction design patterns to address typical challenges of physical navigation and interaction with AR in a museum, focusing on usability and the enhancement of visitor enjoyment through adding game elements. By prototyping and testing in both simulated and real-world museum environments, the research confirms that these patterns can enhance playfulness. The findings advocate for tailored interaction patterns that enhance usability and engagement, supporting the wider adoption of AR in cultural heritage domains.",
+    "topics": [
+      "HMD-AR",
+      "Locative Interaction",
+      "Playfulness",
+      "Cultural Heritage"
+    ]
   },
   {
     "slug": "cross-device-ar-interaction-patterns",
@@ -123,17 +135,17 @@
     "year": "2024",
     "title": "Considerations for Cross-device Augmented Reality Interaction Patterns in the Field of Cultural Heritage Mediation",
     "authors": ["Yu Liu", "Ulrike Spierling"],
-    "venue": "Gesellschaft für Informatik (GI), 2024",
+    "venue": "INFORMATIK 2024, Gesellschaft für Informatik (GI), pp. 871–882",
     "type": "Conference Contribution",
-    "doi": "",
-    "url": "",
-    "image": "",
-    "abstract": "",
+    "doi": "10.18420/inf2024_74",
+    "url": "https://doi.org/10.18420/inf2024_74",
+    "image": "/images/literature/gi-2024-cross-device-ar-interaction-patterns.jpeg",
+    "abstract": "In museums and exhibitions, augmented reality (AR) technology increases visitor engagement by providing immersive experiences. Using an example in a natural history museum, we discuss how interaction patterns specifically developed for a head-mounted display can also be applied to hand-held devices. The aim is to use the same content on different platforms. The interaction patterns discussed are spatial guidance with following a virtual avatar, the indication of AR content in space and its activation, the control of sequential explanations, and the interaction with annotations such as precisely applied labels. Cross-device solutions and patterns are compared.",
     "topics": [
       "Cross-device AR",
       "Interaction Patterns",
-      "Cultural Heritage",
-      "HCI"
+      "HMD-AR",
+      "Cultural Heritage"
     ]
   },
   {
@@ -146,8 +158,8 @@
     "type": "Demonstration",
     "doi": "",
     "url": "",
-    "image": "",
-    "abstract": "",
+    "image": "/images/literature/gch-2024-playful-interaction-patterns-demo.jpeg",
+    "abstract": "This proposal explores AR applications with engaging interaction patterns to provide immersive and entertaining museum experiences. Focusing on cultural heritage, this demonstration showcases innovative interaction patterns for navigation and exhibit activation. The navigation interaction pattern uses dynamic visual and auditory cues, while the exhibit activation interaction pattern incorporates playful orca-inspired elements. Implemented in Unity3D and deployed on HoloLens 2, the demonstration effectively balances usability and entertainment, enhancing visitor engagement and showcasing new AR possibilities for museums.",
     "topics": [
       "HMD-AR",
       "Interaction Patterns",
@@ -178,14 +190,14 @@
     "slug": "interaction-challenges-first-time-hmd-ar-users",
     "authorRole": "first-author",
     "year": "2023",
-    "title": "Evaluating Interaction Challenges of Head-Mounted Device-Based Augmented Reality Applications for First-Time Users at Museums and Exhibitions",
-    "authors": ["Yu Liu", "J. L. Bitter", "Ulrike Spierling"],
-    "venue": "HCII 2023",
+    "title": "Evaluating Interaction Challenges of Head-Mounted Device-based Augmented Reality Applications for First-time Users at Museums and Exhibitions",
+    "authors": ["Yu Liu", "Jessica L. Bitter", "Ulrike Spierling"],
+    "venue": "HCII 2023, Springer, pp. 150–163",
     "type": "Conference Paper",
-    "doi": "",
-    "url": "",
-    "image": "",
-    "abstract": "",
+    "doi": "10.1007/978-3-031-34732-0_11",
+    "url": "https://doi.org/10.1007/978-3-031-34732-0_11",
+    "image": "/images/literature/hcii-2023-interaction-challenges-first-time-users.jpg",
+    "abstract": "Many museums are seeking opportunities to apply head-mounted device (HMD)-based augmented reality (AR) technology to their exhibitions. However, due to the novel interaction method of HMDs, visitors are usually first-time users who find it difficult to gain enjoyment from using HMD-based AR applications directly. Thus, we argue that it is crucial to understand what has prevented visitors from experiencing the convenience of HMD-based AR applications. There are two main contributions to computer science in this paper: first, we introduced an HMD-based AR prototype with three interaction patterns that are made based on a natural science exhibition; Second, we proposed a usability test method to evaluate the HMD-based AR prototype to identify potential interaction problems in the exhibition sector. The results show that the suggested usability test method is effective in identifying interaction challenges and it helps media developers to improve AR experiences for first-time users at exhibitions and museums.",
     "topics": ["HMD-AR", "Usability", "First-Time Users", "Museums"]
   },
   {
@@ -193,14 +205,19 @@
     "authorRole": "first-author",
     "year": "2023",
     "title": "Newbie Guides for Omnidirectional Guidance in Head-Mounted-Device-Based Museum Applications",
-    "authors": ["Yu Liu", "Y. Huang", "Ulrike Spierling"],
-    "venue": "HCII 2023",
+    "authors": ["Yu Liu", "Yan Huang", "Ulrike Spierling"],
+    "venue": "HCII 2023, CCIS 1834, Springer, pp. 478–485",
     "type": "Conference Paper",
-    "doi": "",
-    "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": ["HMD-AR", "Guidance", "Navigation", "Museums"]
+    "doi": "10.1007/978-3-031-35998-9_63",
+    "url": "https://doi.org/10.1007/978-3-031-35998-9_63",
+    "image": "/images/literature/hcii-2023-newbie-guides-omnidirectional-guidance.jpg",
+    "abstract": "Novel digital museum guides using omnidirectional cues through head-mounted devices (HMDs) have been presented in previous research. However, due to the novel interaction technologies of HMDs, today's visitors are not yet familiar with these types of guides. We developed and tested instructions (\"newbie guides\") to help first-time users learn novel interaction patterns of HMDs, inspired by those used in website design or game tutorial design. First, we created three basic example patterns to direct attention using visual, auditory, and a combination of visual and auditory cues. Second, we created a newbie guide as an example showcase for each guidance pattern based on seven design criteria. The newbie guides were tested and evaluated in an exhibition situation, and the results indicate that the seven design criteria can assist HMD-based AR developers in creating effective newbie guides to support first-time users learn omnidirectional guidance patterns in the museum and exhibition context.",
+    "topics": [
+      "HMD-AR",
+      "Omnidirectional Guidance",
+      "First-Time Users",
+      "Onboarding"
+    ]
   },
   {
     "slug": "immersive-ar-game-based-learning-museums",
@@ -220,15 +237,15 @@
     "slug": "hci-patterns-hmd-ar-exhibition-domain",
     "authorRole": "first-author",
     "year": "2022",
-    "title": "Human-Computer Interaction Patterns for Head-Mounted-Device-Based Augmented Reality in the Exhibition Domain",
+    "title": "Human-Computer Interaction Patterns for Head-Mounted-Device-based Augmented Reality in the Exhibition Domain",
     "authors": ["Yu Liu"],
-    "venue": "Doctoral Consortium, ACM International Conference, 2022, pp. 21–26",
-    "type": "Doctoral Consortium",
+    "venue": "ACM International Conference on Interactive Media Experiences (IMX), Doctoral Consortium, 2022",
+    "type": "Doctoral Consortium Paper",
     "doi": "",
     "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": ["HCI", "HMD-AR", "Interaction Patterns", "Exhibitions"]
+    "image": "/images/literature/imx-2022-hci-patterns-hmd-ar-exhibition-domain.jpg",
+    "abstract": "Head-mounted-device (HMD) based augmented reality (AR) applications bring new opportunities to the exhibition domain. However, first-time users such as exhibition visitors are not familiar with the interaction method of the HMD, which also brings challenges to exhibition authors while implementing HMD-based AR technologies. This research project focuses on the accessibility of HMD-based AR applications in the exhibition domain. It explores potential interaction patterns based on the technical features of the HMD for exhibition-related use cases. Both information system research and design research methods are applied while exploring interaction solutions for human factor challenges. Several prototypes will be created and iteratively tested and evaluated at the exhibition for generalizing effective and accessible interaction patterns. As a result, we will achieve a pattern-based interaction system as an artifact with integrated design knowledge. This will support the future development of AR authoring tools.",
+    "topics": ["HMD-AR", "Interaction Patterns", "Accessibility", "Authoring"]
   },
   {
     "slug": "blue-butterfly-ar-museum-guide",
@@ -271,18 +288,23 @@
     "topics": ["AR Authoring", "Museums", "Exhibitions", "Interaction Design"]
   },
   {
-    "slug": "handheld-vs-head-mounted-ar-patterns",
+    "slug": "handheld-vs-head-mounted-ar-interaction-patterns",
     "authorRole": "first-author",
     "year": "2021",
     "title": "Handheld vs. Head-Mounted AR Interaction Patterns for Museums or Guided Tours",
-    "authors": ["Yu Liu", "Ulrike Spierling", "L. Rau", "Ralf Dörner"],
-    "venue": "INTETAIN, Springer, 2021, pp. 229–242",
+    "authors": ["Yu Liu", "Ulrike Spierling", "Linda Rau", "Ralf Dörner"],
+    "venue": "INTETAIN 2020, LNICST 377, Springer, 2021, pp. 229–242",
     "type": "Conference Paper",
-    "doi": "",
-    "url": "",
-    "image": "",
-    "abstract": "",
-    "topics": ["Handheld AR", "HMD-AR", "Interaction Patterns", "Museums"]
+    "doi": "10.1007/978-3-030-76426-5_15",
+    "url": "https://doi.org/10.1007/978-3-030-76426-5_15",
+    "image": "/images/literature/intetain-2020-handheld-vs-head-mounted-ar.jpg",
+    "abstract": "In recent years, Augmented Reality (AR) technology has been adopted in various fields. The development of handheld devices (HHD) such as smartphones and tablets gives people more chances to use AR technology in their daily lives. However, AR applications using head-mounted devices (HMD) such as Microsoft HoloLens or Magic Leap provide stronger presence experiences than HHD, so that users can immerse themselves better in AR scenarios. While currently there already exist prototypical examples of HMD in museum contexts, widely used interaction patterns are not yet well established, although they would play an important role for accessibility by large user groups. This paper explores existing and potential interaction patterns for guided tours in museums, led by the question how to reconcile AR interaction patterns on HHD and HMD. We use an existing museum showcase for handheld AR from the project “Spirit” to transfer its interaction patterns to an HMD, such as the MS HoloLens. Technical constraints and usability criteria regarding the potential overlaps and applicability have been analyzed in this paper.",
+    "topics": [
+      "Cross-device AR",
+      "HHD vs. HMD",
+      "Interaction Patterns",
+      "Cultural Heritage"
+    ]
   },
   {
     "slug": "nugget-based-concept-creating-ar",
