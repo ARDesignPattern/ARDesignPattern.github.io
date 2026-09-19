@@ -59,7 +59,7 @@
     "type": "Conference Paper",
     "doi": "",
     "url": "",
-    "image": "https://yuliu.design/images/publications/hcii-2026-semantic-anchoring-figure1.jpg",
+    "image": "https://yuliu.design/images/publications/hcii-2026-semantic-anchoring-figure1.jpeg",
     "abstract": "Head-mounted display (HMD) augmented reality (AR) is increasingly used in museums, yet in-situ evidence on where to place and anchor UI controls remains limited. We compare body-anchored controls (hand-attached) and exhibit-anchored controls (placed on/near the artefact) in an AR experience for a life-size orca exhibit. Following a Design Science Research process, we iterated the system into two design packages and evaluated them in two consecutive field studies with independent visitor cohorts (N=46; 23 per round) using questionnaires, structured observation, and interviews. Both versions were perceived as accessible and acceptable, but showed distinct experience profiles. The body-anchored package was associated with more user-initiated interventions and movement-based exploration and tended to show higher self-reported spatial presence and gameful experience. The exhibit-anchored package foregrounded exhibit-centric controls and clearer closure and was accompanied by more stationary, observational use and more neutral presence and gameful ratings. These findings indicate a design-package-level trade-off between semantic coherence and interaction initiative, suggesting that museum AR should preserve action readiness and mobility while keeping controls meaningfully tied to exhibits.",
     "topics": ["HCI", "HMD-AR", "Spatial UI", "UI Anchoring"]
   },
@@ -196,7 +196,7 @@
     "type": "Conference Paper",
     "doi": "10.1007/978-3-031-34732-0_11",
     "url": "https://doi.org/10.1007/978-3-031-34732-0_11",
-    "image": "https://yuliu.design/images/publications/hcii-2023-interaction-challenges-first-time-users.jpg",
+    "image": "https://yuliu.design/images/publications/hcii-2023-interaction-challenges-first-time-users.jpeg",
     "abstract": "Many museums are seeking opportunities to apply head-mounted device (HMD)-based augmented reality (AR) technology to their exhibitions. However, due to the novel interaction method of HMDs, visitors are usually first-time users who find it difficult to gain enjoyment from using HMD-based AR applications directly. Thus, we argue that it is crucial to understand what has prevented visitors from experiencing the convenience of HMD-based AR applications. There are two main contributions to computer science in this paper: first, we introduced an HMD-based AR prototype with three interaction patterns that are made based on a natural science exhibition; Second, we proposed a usability test method to evaluate the HMD-based AR prototype to identify potential interaction problems in the exhibition sector. The results show that the suggested usability test method is effective in identifying interaction challenges and it helps media developers to improve AR experiences for first-time users at exhibitions and museums.",
     "topics": ["HMD-AR", "Usability", "First-Time Users", "Museums"]
   },
@@ -243,7 +243,7 @@
     "type": "Doctoral Consortium Paper",
     "doi": "",
     "url": "",
-    "image": "https://yuliu.design/images/publications/imx-2022-hci-patterns-hmd-ar-exhibition-domain.jpg",
+    "image": "https://yuliu.design/images/publications/imx-2022-hci-patterns-hmd-ar-exhibition-domain.jpeg",
     "abstract": "Head-mounted-device (HMD) based augmented reality (AR) applications bring new opportunities to the exhibition domain. However, first-time users such as exhibition visitors are not familiar with the interaction method of the HMD, which also brings challenges to exhibition authors while implementing HMD-based AR technologies. This research project focuses on the accessibility of HMD-based AR applications in the exhibition domain. It explores potential interaction patterns based on the technical features of the HMD for exhibition-related use cases. Both information system research and design research methods are applied while exploring interaction solutions for human factor challenges. Several prototypes will be created and iteratively tested and evaluated at the exhibition for generalizing effective and accessible interaction patterns. As a result, we will achieve a pattern-based interaction system as an artifact with integrated design knowledge. This will support the future development of AR authoring tools.",
     "topics": ["HMD-AR", "Interaction Patterns", "Accessibility", "Authoring"]
   },
