@@ -210,7 +210,7 @@
     "type": "Conference Paper",
     "doi": "10.1007/978-3-031-35998-9_63",
     "url": "https://doi.org/10.1007/978-3-031-35998-9_63",
-    "image": "/images/literature/hcii-2023-newbie-guides-omnidirectional-guidance.jpg",
+    "image": "/images/literature/hcii-2023-newbie-guides-omnidirectional-guidance.jpeg",
     "abstract": "Novel digital museum guides using omnidirectional cues through head-mounted devices (HMDs) have been presented in previous research. However, due to the novel interaction technologies of HMDs, today's visitors are not yet familiar with these types of guides. We developed and tested instructions (\"newbie guides\") to help first-time users learn novel interaction patterns of HMDs, inspired by those used in website design or game tutorial design. First, we created three basic example patterns to direct attention using visual, auditory, and a combination of visual and auditory cues. Second, we created a newbie guide as an example showcase for each guidance pattern based on seven design criteria. The newbie guides were tested and evaluated in an exhibition situation, and the results indicate that the seven design criteria can assist HMD-based AR developers in creating effective newbie guides to support first-time users learn omnidirectional guidance patterns in the museum and exhibition context.",
     "topics": [
       "HMD-AR",
@@ -297,7 +297,7 @@
     "type": "Conference Paper",
     "doi": "10.1007/978-3-030-76426-5_15",
     "url": "https://doi.org/10.1007/978-3-030-76426-5_15",
-    "image": "/images/literature/intetain-2020-handheld-vs-head-mounted-ar.jpg",
+    "image": "/images/literature/intetain-2020-handheld-vs-head-mounted-ar.jpeg",
     "abstract": "In recent years, Augmented Reality (AR) technology has been adopted in various fields. The development of handheld devices (HHD) such as smartphones and tablets gives people more chances to use AR technology in their daily lives. However, AR applications using head-mounted devices (HMD) such as Microsoft HoloLens or Magic Leap provide stronger presence experiences than HHD, so that users can immerse themselves better in AR scenarios. While currently there already exist prototypical examples of HMD in museum contexts, widely used interaction patterns are not yet well established, although they would play an important role for accessibility by large user groups. This paper explores existing and potential interaction patterns for guided tours in museums, led by the question how to reconcile AR interaction patterns on HHD and HMD. We use an existing museum showcase for handheld AR from the project “Spirit” to transfer its interaction patterns to an HMD, such as the MS HoloLens. Technical constraints and usability criteria regarding the potential overlaps and applicability have been analyzed in this paper.",
     "topics": [
       "Cross-device AR",
