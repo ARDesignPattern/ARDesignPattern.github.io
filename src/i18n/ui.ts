@@ -61,22 +61,90 @@ export const ui = {
       workTitle: "What I Do",
 
       workBody:
-        "I design and evaluate interactive systems from early concepts to field-deployed prototypes. My work combines interaction design, technical prototyping, user research, and empirical evaluation, with a particular focus on XR, spatial interfaces, and first-time users in real-world settings.",
+        "I design and evaluate interactive systems from early concepts to field-deployed prototypes. My work combines interaction design, technical prototyping, user research, and empirical evaluation, with a particular focus on XR, spatial interfaces, and first-time users in real-world settings. Alongside my research and development work, I also contribute to university teaching, student mentoring, project coordination, and international scientific exchange.",
+
+      capabilities: [
+        "Interaction Design",
+        "HCI / User Research",
+        "XR / Spatial Computing",
+        "Prototyping",
+        "Field Deployment",
+        "Design Research",
+        "Teaching & Mentoring",
+        "Project Coordination",
+        "International Collaboration",
+      ],
 
       practiceTitle: "Research & Practice",
 
       practiceBody:
-        "My research at Hochschule RheinMain has focused on head-mounted AR and mixed-reality interaction in museums and cultural heritage environments. Alongside academic research, my earlier work in industry includes UI/UX and interaction design for smart glasses, automotive interfaces, and professional digital audio products.",
+        "My research at Hochschule RheinMain has focused on head-mounted AR and mixed-reality interaction in museums and cultural heritage environments. Alongside academic research, my earlier work in industry includes UI/UX and interaction design for smart glasses, automotive interfaces, and professional digital audio products. My professional experience also extends to academic supervision, peer review, team coordination, and international research networking.",
+
+      experience: [
+        {
+          label: "Research",
+          body: "Hochschule RheinMain · presentXR · LoGaCulture",
+        },
+        {
+          label: "Industry",
+          body: "ZEISS / tooz · Bosch · Music Tribe",
+        },
+        {
+          label: "Methods",
+          body: "Research through Design · Design Science Research · Mixed-method evaluation · Field studies",
+        },
+        {
+          label: "Teaching",
+          body: "Undergraduate and postgraduate teaching · Independent course design · XR project supervision · Academic mentoring",
+        },
+        {
+          label: "Academic Service",
+          body: "Peer reviewer for international journals and conferences, including Elsevier and ACM venues",
+        },
+        {
+          label: "Leadership",
+          body: "Head of Volunteer Coordination · 30-member team across six functional groups · 3rd China-Europe Scientists Forum, 2026",
+        },
+        {
+          label: "International Exchange",
+          body: "China–Germany research networking · Institutional academic exchange · Cross-cultural coordination",
+        },
+      ],
 
       approachTitle: "Approach",
 
       approachBody:
         "My process moves between design exploration, prototyping, real-world deployment, and empirical evaluation. I use individual prototypes not only as applications, but also as research artifacts from which broader design knowledge can be derived. This has led to my doctoral work on reusable and parameterized interaction design patterns for HMD-based AR.",
 
+      recognitionTitle: "Recognition",
+
+      recognition: [
+        {
+          year: "2026",
+          title: "China-Europe Distinguished Contribution Award",
+          institution:
+            "Organising Committee of the China-Europe Scientists Forum · Frankfurt, Germany",
+        },
+        {
+          year: "2016–2017",
+          title: "Deutschlandstipendium",
+          institution: "Hochschule Rhein-Waal, Germany",
+        },
+      ],
+
       contactTitle: "Connect",
 
       contactLead:
         "For research collaboration, interaction design, XR, HCI, or related opportunities, you can find my CV and academic profiles below.",
+
+      cv: {
+        href: "/documents/Yu_Liu_CV_EN.pdf",
+        title: "Curriculum Vitae",
+        updated: "PDF · Last updated Nov 2026",
+      },
+
+      profileLabel: "Profile",
+      emailLabel: "Email",
     },
 
     project: {
@@ -149,22 +217,90 @@ export const ui = {
       workTitle: "Was ich mache",
 
       workBody:
-        "Ich gestalte und evaluiere interaktive Systeme von frühen Konzepten bis hin zu Prototypen, die in realen Anwendungskontexten eingesetzt werden. Meine Arbeit verbindet Interaction Design, technische Prototypentwicklung, Nutzerforschung und empirische Evaluation, mit einem besonderen Fokus auf XR, räumliche Interfaces und Erstnutzer in realen Umgebungen.",
+        "Ich gestalte und evaluiere interaktive Systeme von frühen Konzepten bis hin zu Prototypen, die in realen Anwendungskontexten eingesetzt werden. Meine Arbeit verbindet Interaction Design, technische Prototypentwicklung, Nutzerforschung und empirische Evaluation, mit einem besonderen Fokus auf XR, räumliche Interfaces und Erstnutzer in realen Umgebungen. Neben Forschung und Entwicklung engagiere ich mich in der Hochschullehre, der Betreuung von Studierenden, der Projektkoordination und im internationalen Wissenschaftsaustausch.",
+
+      capabilities: [
+        "Interaktionsdesign",
+        "HCI / Nutzerforschung",
+        "XR / Spatial Computing",
+        "Prototyping",
+        "Erprobung im realen Einsatz",
+        "Designforschung",
+        "Lehre & Betreuung",
+        "Projektkoordination",
+        "Internationale Zusammenarbeit",
+      ],
 
       practiceTitle: "Forschung & Praxis",
 
       practiceBody:
-        "Meine Forschung an der Hochschule RheinMain konzentriert sich auf Head-Mounted AR und Mixed-Reality-Interaktion in Museen und kulturellen Kontexten. Neben meiner akademischen Forschung umfasst meine frühere Industrieerfahrung UI/UX- und Interaction Design für Smart Glasses, Fahrzeuginterfaces und professionelle digitale Audioprodukte.",
+        "Meine Forschung an der Hochschule RheinMain konzentrierte sich auf Head-Mounted AR und Mixed-Reality-Interaktion in Museen und kulturellen Kontexten. Neben meiner akademischen Forschung umfasst meine frühere Industrieerfahrung UI/UX- und Interaction Design für Smart Glasses, Fahrzeuginterfaces und professionelle digitale Audioprodukte. Darüber hinaus verfüge ich über Erfahrung in der wissenschaftlichen Betreuung, der Begutachtung wissenschaftlicher Beiträge, der Teamkoordination und der internationalen Forschungsvernetzung.",
+
+      experience: [
+        {
+          label: "Forschung",
+          body: "Hochschule RheinMain · presentXR · LoGaCulture",
+        },
+        {
+          label: "Industrie",
+          body: "ZEISS / tooz · Bosch · Music Tribe",
+        },
+        {
+          label: "Methoden",
+          body: "Research through Design · Design Science Research · Mixed-Methods-Evaluation · Feldstudien",
+        },
+        {
+          label: "Lehre",
+          body: "Lehre auf Bachelor- und Masterebene · Eigenständige Lehrveranstaltungsplanung · XR-Projektbetreuung · Wissenschaftliche Betreuung",
+        },
+        {
+          label: "Wissenschaftliches Engagement",
+          body: "Gutachter für internationale Fachzeitschriften und Konferenzen, unter anderem bei Elsevier und ACM",
+        },
+        {
+          label: "Teamleitung",
+          body: "Leitung der Freiwilligenkoordination · 30 Personen in sechs Arbeitsgruppen · 3. China-Europe Scientists Forum, 2026",
+        },
+        {
+          label: "Internationaler Austausch",
+          body: "Deutsch-chinesische Forschungsvernetzung · Institutioneller Wissenschaftsaustausch · Interkulturelle Koordination",
+        },
+      ],
 
       approachTitle: "Arbeitsweise",
 
       approachBody:
         "Mein Arbeitsprozess verbindet Designexploration, Prototyping, reale Erprobung und empirische Evaluation. Prototypen dienen dabei nicht nur als Anwendungen, sondern auch als Forschungsartefakte, aus denen übertragbares Designwissen abgeleitet werden kann. Dieser Ansatz bildet die Grundlage meiner Promotion zu wiederverwendbaren und parametrisierten Interaktionsmustern für HMD-basierte Augmented Reality.",
 
+      recognitionTitle: "Auszeichnungen",
+
+      recognition: [
+        {
+          year: "2026",
+          title: "China-Europe Distinguished Contribution Award",
+          institution:
+            "Organisationskomitee des China-Europe Scientists Forum · Frankfurt am Main, Deutschland",
+        },
+        {
+          year: "2016–2017",
+          title: "Deutschlandstipendium",
+          institution: "Hochschule Rhein-Waal, Deutschland",
+        },
+      ],
+
       contactTitle: "Kontakt",
 
       contactLead:
         "Für Forschungskooperationen, Interaction Design, XR, HCI oder verwandte Projekte finden Sie unten meinen Lebenslauf und meine wissenschaftlichen Profile.",
+
+      cv: {
+        href: "/documents/Yu_Liu_CV_DE.pdf",
+        title: "Lebenslauf",
+        updated: "PDF · Stand: Nov. 2026",
+      },
+
+      profileLabel: "Profil",
+      emailLabel: "E-Mail",
     },
 
     project: {
@@ -222,22 +358,89 @@ export const ui = {
       workTitle: "我的工作",
 
       workBody:
-        "我从早期概念出发，设计、实现并评估交互系统，一直到能够在真实场景中部署和测试的原型。我的工作结合交互设计、技术原型开发、用户研究与实证评价，尤其关注 XR、空间界面以及真实场景中的首次用户体验。",
+        "我从早期概念出发，设计、实现并评估交互系统，一直到能够在真实场景中部署和测试的原型。我的工作结合交互设计、技术原型开发、用户研究与实证评价，尤其关注 XR、空间界面以及真实场景中的首次用户体验。除科研与技术开发之外，我也参与高校教学、学生指导、项目协调及国际科研交流。",
+
+      capabilities: [
+        "交互设计",
+        "人机交互与用户研究",
+        "XR 与空间计算",
+        "原型开发",
+        "真实场景部署",
+        "设计研究",
+        "教学与学生指导",
+        "项目协调",
+        "国际合作",
+      ],
 
       practiceTitle: "研究与实践",
 
       practiceBody:
-        "我在 Hochschule RheinMain 的研究主要聚焦于头戴式 AR、混合现实交互，以及博物馆和文化遗产场景中的真实部署与用户研究。在进入学术研究之前，我也曾参与智能眼镜、汽车界面和专业数字音频产品的 UI/UX 与交互设计工作。",
+        "我在莱茵美因应用科学大学的研究主要聚焦于头戴式 AR、混合现实交互，以及博物馆和文化遗产场景中的真实部署与用户研究。在进入学术研究之前，我也曾参与智能眼镜、汽车界面和专业数字音频产品的 UI/UX 与交互设计工作。此外，我的职业经历还涵盖高校教学与科研指导、学术同行评审、团队协调及国际科研交流。",
+
+      experience: [
+        {
+          label: "科研经历",
+          body: "莱茵美因应用科学大学 · presentXR · LoGaCulture",
+        },
+        {
+          label: "企业经历",
+          body: "蔡司 / tooz · 博世 · Music Tribe",
+        },
+        {
+          label: "研究方法",
+          body: "通过设计开展研究（RtD）· 设计科学研究（DSR）· 混合方法评估 · 实地研究",
+        },
+        {
+          label: "高校教学",
+          body: "本科及硕士教学 · 独立课程设计 · XR 项目指导 · 学术研究指导",
+        },
+        {
+          label: "学术服务",
+          body: "国际学术期刊及会议同行评审 · Elsevier · ACM",
+        },
+        {
+          label: "团队管理",
+          body: "2026 年第三届中欧科学家论坛义工部负责人 · 30 人团队 · 六个职能工作组",
+        },
+        {
+          label: "国际交流",
+          body: "中德科研机构对接 · 国际学术交流 · 跨文化协调",
+        },
+      ],
 
       approachTitle: "研究与设计方法",
 
       approachBody:
         "我的工作过程连接设计探索、原型开发、真实场景部署与实证评价。我不仅把原型作为具体应用，也将其作为研究载体，从实际设计和测试过程中进一步抽象可迁移的设计知识。这一方法最终形成了我博士研究中面向 HMD-AR 的可复用、参数化交互设计模式体系。",
 
+      recognitionTitle: "荣誉与奖项",
+
+      recognition: [
+        {
+          year: "2026",
+          title: "中欧卓越贡献奖",
+          institution: "中欧科学家论坛组委会 · 德国法兰克福",
+        },
+        {
+          year: "2016–2017",
+          title: "德国国家奖学金（Deutschlandstipendium）",
+          institution: "德国莱茵瓦尔应用科学大学",
+        },
+      ],
+
       contactTitle: "联系",
 
       contactLead:
-        "如有科研合作、交互设计、XR、HCI 或相关机会，可通过下方的 CV、学术主页与联系方式进一步了解和联系我。",
+        "如有科研合作、交互设计、XR、HCI 或相关机会，可通过下方的个人简历、学术主页与联系方式进一步了解和联系我。",
+
+      cv: {
+        href: "/documents/Yu_Liu_CV_ZH.pdf",
+        title: "个人简历",
+        updated: "PDF · 更新于2026年11月",
+      },
+
+      profileLabel: "个人主页",
+      emailLabel: "电子邮箱",
     },
 
     project: {

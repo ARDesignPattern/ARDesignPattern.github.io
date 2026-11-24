@@ -12,6 +12,7 @@ interface Props {
 
 const { lang = "en" } = Astro.props;
 const t = ui[lang];
+const cv = t.about.cv;
 ---
 
 <BaseLayout
@@ -32,13 +33,9 @@ const t = ui[lang];
       <div class="container">
         <p class="eyebrow">{t.about.eyebrow}</p>
 
-        <h1 class="about-title">
-          {t.about.title}
-        </h1>
+        <h1 class="about-title">{t.about.title}</h1>
 
-        <p class="about-intro">
-          {t.about.intro}
-        </p>
+        <p class="about-intro">{t.about.intro}</p>
       </div>
     </section>
 
@@ -66,12 +63,9 @@ const t = ui[lang];
           <p>{t.about.workBody}</p>
 
           <div class="about-capabilities">
-            <span>Interaction Design</span>
-            <span>HCI / User Research</span>
-            <span>XR / Spatial Computing</span>
-            <span>Prototyping</span>
-            <span>Field Deployment</span>
-            <span>Design Research</span>
+            {t.about.capabilities.map((capability) => (
+              <span>{capability}</span>
+            ))}
           </div>
         </div>
       </div>
@@ -88,23 +82,12 @@ const t = ui[lang];
           <p>{t.about.practiceBody}</p>
 
           <div class="experience-list">
-            <div class="experience-row">
-              <span>Research</span>
-              <p>Hochschule RheinMain · presentXR · LoGaCulture</p>
-            </div>
-
-            <div class="experience-row">
-              <span>Industry</span>
-              <p>ZEISS / tooz · Bosch · Music Tribe</p>
-            </div>
-
-            <div class="experience-row">
-              <span>Methods</span>
-              <p>
-                Research through Design · Design Science Research · mixed-method
-                evaluation · field studies
-              </p>
-            </div>
+            {t.about.experience.map((item) => (
+              <div class="experience-row">
+                <span>{item.label}</span>
+                <p>{item.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -123,6 +106,31 @@ const t = ui[lang];
       </div>
     </section>
 
+    <!-- RECOGNITION -->
+    <section class="about-section">
+      <div class="container about-grid">
+        <div>
+          <p class="eyebrow">{t.about.recognitionTitle}</p>
+        </div>
+
+        <div class="about-copy">
+          <div class="experience-list" style="margin-top: 0;">
+            {t.about.recognition.map((award) => (
+              <div class="experience-row">
+                <span>{award.year}</span>
+                <div>
+                  <p>{award.title}</p>
+                  <p style="color: var(--muted); font-size: var(--text-xs); margin-top: 0.5rem;">
+                    {award.institution}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CONNECT -->
     <section class="about-section about-connect">
       <div class="container about-grid">
@@ -131,19 +139,17 @@ const t = ui[lang];
         </div>
 
         <div>
-          <p class="contact-lead">
-            {t.about.contactLead}
-          </p>
+          <p class="contact-lead">{t.about.contactLead}</p>
 
           <div class="profile-links">
             <a
               class="profile-link"
-              href="/documents/Yu_Liu_CV.pdf"
+              href={cv.href}
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
-              <span>Curriculum Vitae</span>
-              <span>PDF · Last updated Sep 2026 ↗</span>
+              <span>{cv.title}</span>
+              <span>{cv.updated} ↗</span>
             </a>
 
             <a
@@ -153,7 +159,7 @@ const t = ui[lang];
               rel="noopener noreferrer"
             >
               <span>LinkedIn</span>
-              <span>Profile ↗</span>
+              <span>{t.about.profileLabel} ↗</span>
             </a>
 
             <a
@@ -167,7 +173,7 @@ const t = ui[lang];
             </a>
 
             <a class="profile-link" href={`mailto:${site.email}`}>
-              <span>Email</span>
+              <span>{t.about.emailLabel}</span>
               <span>{site.email} ↗</span>
             </a>
           </div>
